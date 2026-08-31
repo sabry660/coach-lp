@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary-red: #E30613;
+    --primary-red-hover: #C00510;
+    --pure-white: #FFFFFF;
+    --dark-grey: #2B2B2B;
+    --darker-grey: #1A1A1A;
+    --card-bg: #121212;
+    --pure-black: #000000;
+  }
+
+  body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--pure-black);
+    color: var(--pure-white);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Bebas Neue', cursive, sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-body {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+/* Custom Utilities */
+.text-red-primary {
+  color: #E30613;
+}
+
+.bg-red-primary {
+  background-color: #E30613;
+}
+
+.border-red-primary {
+  border-color: #E30613;
+}
+
+.glow-red {
+  box-shadow: 0 0 25px rgba(227, 6, 19, 0.35);
+}
+
+.glow-red-sm {
+  box-shadow: 0 0 15px rgba(227, 6, 19, 0.2);
+}
+
+.card-luxury {
+  background: linear-gradient(180deg, #181818 0%, #101010 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-luxury-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-luxury-hover:hover {
+  border-color: rgba(227, 6, 19, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(227, 6, 19, 0.25);
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #2B2B2B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E30613;
+}
+
