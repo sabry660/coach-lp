@@ -16,6 +16,7 @@ import {
   Dumbbell,
   Target
 } from 'lucide-react';
+import { useTranslations } from '../hooks/useTranslations';
 
 // Custom TikTok icon
 function TikTokIcon({ className }: { className?: string }) {
@@ -35,12 +36,13 @@ export const ContactForm: React.FC<ContactFormProps> = ({
   settings,
   selectedTierId,
 }) => {
+  const t = useTranslations();
   const [formData, setFormData] = useState<ConsultationFormData>({
     name: '',
     phone: '',
     email: '',
-    goal: 'Fat Loss & Physique Shredding',
-    experienceLevel: 'Intermediate (1-3 years gym)',
+    goal: t.contact.goalFatLoss,
+    experienceLevel: t.contact.expIntermediate,
     selectedTier: selectedTierId ? (selectedTierId === 'vip-1on1' ? 'VIP 1-on-1 ($349/mo)' : selectedTierId === 'pro-elite' ? 'Pro Elite Coaching ($199/mo)' : 'Starter Tier ($99/mo)') : 'Pro Elite Coaching ($199/mo)',
     currentWeight: '',
     targetWeight: '',
@@ -114,9 +116,9 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#000000] relative border-t border-[#2B2B2B]">
+    <section id="contact" className="py-24 bg-[#000000] relative overflow-hidden border-t border-[#2B2B2B] w-full max-w-full">
       {/* Background Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#E30613]/10 blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[500px] bg-[#E30613]/10 blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -124,13 +126,11 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#1A1A1A] border border-[#2B2B2B] text-xs font-bold uppercase tracking-widest text-[#E30613]">
             <Target className="w-3.5 h-3.5" />
-            Apply For Coaching
+            {t.contact.badge}
           </div>
-          <h2 className="font-heading text-4xl sm:text-6xl text-white tracking-wider">
-            START YOUR <span className="text-[#E30613]">TRANSFORMATION TODAY</span>
-          </h2>
+          <h2 className="font-heading text-4xl sm:text-6xl text-white tracking-wider" dangerouslySetInnerHTML={{ __html: t.contact.headline }} />
           <p className="font-body text-gray-400 text-sm sm:text-base">
-            Fill out your details below to instantly generate your tailored consultation message and send it directly to Captain Ahmed on WhatsApp.
+            {t.contact.description}
           </p>
         </div>
 
@@ -150,10 +150,10 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
 
                 <div>
                   <h3 className="font-heading text-3xl text-white tracking-wide">
-                    DIRECT COACH ACCESS
+                    {t.contact.directAccess}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-300 font-body leading-relaxed mt-1">
-                    Skip the middleman. You will work directly with <strong>Captain Ahmed Mostafa</strong>. Every workout, diet split, and weekly video audit is personally engineered by him.
+                    {t.contact.directAccessDesc.replace('Captain Ahmed Mostafa', `<strong>${settings.coachName}</strong>`)}
                   </p>
                 </div>
 
@@ -164,12 +164,12 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                   className="w-full py-4 px-6 rounded bg-[#25D366] hover:bg-[#20bd5a] text-black font-bold uppercase tracking-wider text-xs transition-all flex items-center justify-center gap-2 shadow-xl hover:scale-[1.02]"
                 >
                   <MessageCircle className="w-5 h-5 fill-black" />
-                  <span>Instant WhatsApp Chat</span>
+                  <span>{t.contact.instantWhatsApp}</span>
                 </button>
 
                 <div className="text-[11px] text-gray-400 text-center flex items-center justify-center gap-1.5">
                   <ShieldCheck className="w-4 h-4 text-[#E30613]" />
-                  <span>Confidential & Direct Athletic / Nutrition Consultation</span>
+                  <span>{t.contact.confidential}</span>
                 </div>
               </div>
             </div>
@@ -177,10 +177,10 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
             {/* Social Media Links Box */}
             <div className="p-6 rounded-xl bg-[#111111] border border-[#2B2B2B] space-y-4">
               <h4 className="font-heading text-xl text-white tracking-wide">
-                FOLLOW CAPTAIN AHMED MOSTAFA
+                {t.contact.followCaptain}
               </h4>
               <p className="text-xs text-gray-400 font-body">
-                Daily exercise execution tips, scientific nutrition breakdowns, and client stories.
+                {t.contact.followDesc}
               </p>
 
               <div className="grid grid-cols-2 gap-3 pt-2">
@@ -191,7 +191,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                   className="flex items-center gap-2.5 p-3 rounded bg-[#1A1A1A] hover:bg-[#2B2B2B] text-gray-200 hover:text-white border border-gray-800 transition-colors text-xs font-semibold"
                 >
                   <Instagram className="w-4 h-4 text-[#E30613]" />
-                  <span>Instagram</span>
+                  <span>{t.contact.instagram}</span>
                 </a>
 
                 <a
@@ -201,7 +201,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                   className="flex items-center gap-2.5 p-3 rounded bg-[#1A1A1A] hover:bg-[#2B2B2B] text-gray-200 hover:text-white border border-gray-800 transition-colors text-xs font-semibold"
                 >
                   <Facebook className="w-4 h-4 text-blue-500" />
-                  <span>Facebook</span>
+                  <span>{t.contact.facebook}</span>
                 </a>
 
                 <a
@@ -211,7 +211,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                   className="flex items-center gap-2.5 p-3 rounded bg-[#1A1A1A] hover:bg-[#2B2B2B] text-gray-200 hover:text-white border border-gray-800 transition-colors text-xs font-semibold"
                 >
                   <TikTokIcon className="w-4 h-4 text-pink-400" />
-                  <span>TikTok</span>
+                  <span>{t.contact.tiktok}</span>
                 </a>
 
                 <a
@@ -219,7 +219,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                   className="flex items-center gap-2.5 p-3 rounded bg-[#1A1A1A] hover:bg-[#2B2B2B] text-gray-200 hover:text-white border border-gray-800 transition-colors text-xs font-semibold"
                 >
                   <Mail className="w-4 h-4 text-gray-300" />
-                  <span>Official Email</span>
+                  <span>{t.contact.officialEmail}</span>
                 </a>
               </div>
             </div>
@@ -237,7 +237,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                   <div className="space-y-2">
                     <label className="text-xs uppercase font-bold text-gray-300 tracking-wider flex items-center gap-1.5">
                       <User className="w-3.5 h-3.5 text-[#E30613]" />
-                      <span>Full Name *</span>
+                      <span>{t.contact.fullName} *</span>
                     </label>
                     <input
                       type="text"
@@ -253,7 +253,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                   <div className="space-y-2">
                     <label className="text-xs uppercase font-bold text-gray-300 tracking-wider flex items-center gap-1.5">
                       <PhoneCall className="w-3.5 h-3.5 text-[#E30613]" />
-                      <span>WhatsApp Number *</span>
+                      <span>{t.contact.whatsappNumber} *</span>
                     </label>
                     <input
                       type="tel"
@@ -271,7 +271,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-2">
                     <label className="text-xs uppercase font-bold text-gray-300 tracking-wider">
-                      Email Address
+                      {t.contact.emailAddress}
                     </label>
                     <input
                       type="email"
@@ -285,7 +285,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
 
                   <div className="space-y-2">
                     <label className="text-xs uppercase font-bold text-gray-300 tracking-wider">
-                      Age
+                      {t.contact.age}
                     </label>
                     <input
                       type="number"
@@ -303,7 +303,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                   <div className="space-y-2">
                     <label className="text-xs uppercase font-bold text-gray-300 tracking-wider flex items-center gap-1.5">
                       <Ruler className="w-3.5 h-3.5 text-gray-400" />
-                      <span>Height (cm)</span>
+                      <span>{t.contact.height}</span>
                     </label>
                     <input
                       type="number"
@@ -318,7 +318,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                   <div className="space-y-2">
                     <label className="text-xs uppercase font-bold text-gray-300 tracking-wider flex items-center gap-1.5">
                       <Scale className="w-3.5 h-3.5 text-gray-400" />
-                      <span>Current Weight (kg)</span>
+                      <span>{t.contact.currentWeight}</span>
                     </label>
                     <input
                       type="number"
@@ -333,7 +333,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                   <div className="space-y-2">
                     <label className="text-xs uppercase font-bold text-gray-300 tracking-wider flex items-center gap-1.5">
                       <Target className="w-3.5 h-3.5 text-gray-400" />
-                      <span>Target Weight (kg)</span>
+                      <span>{t.contact.targetWeight}</span>
                     </label>
                     <input
                       type="number"
@@ -351,7 +351,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                   <div className="space-y-2">
                     <label className="text-xs uppercase font-bold text-gray-300 tracking-wider flex items-center gap-1.5">
                       <Target className="w-3.5 h-3.5 text-[#E30613]" />
-                      <span>Primary Fitness Goal</span>
+                      <span>{t.contact.primaryGoal}</span>
                     </label>
                     <select
                       name="goal"
@@ -359,18 +359,18 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                       onChange={handleChange}
                       className="w-full bg-[#181818] border border-[#2B2B2B] focus:border-[#E30613] focus:ring-1 focus:ring-[#E30613] rounded px-4 py-3 text-sm text-white outline-none cursor-pointer"
                     >
-                      <option value="Fat Loss & Physique Shredding">Fat Loss & Physique Shredding</option>
-                      <option value="Lean Muscle Hypertrophy & Bulk">Lean Muscle Hypertrophy & Bulk</option>
-                      <option value="Full Body Recomposition (Lose Fat + Build Muscle)">Full Body Recomposition</option>
-                      <option value="Contest / Stage / Photoshoot Prep">Contest / Stage / Photoshoot Prep</option>
-                      <option value="Athletic Strength & Injury Rehabilitation">Athletic Strength & Rehabilitation</option>
+                      <option value={t.contact.goalFatLoss}>{t.contact.goalFatLoss}</option>
+                      <option value={t.contact.goalMuscle}>{t.contact.goalMuscle}</option>
+                      <option value={t.contact.goalRecomp}>{t.contact.goalRecomp}</option>
+                      <option value={t.contact.goalContest}>{t.contact.goalContest}</option>
+                      <option value={t.contact.goalRehab}>{t.contact.goalRehab}</option>
                     </select>
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-xs uppercase font-bold text-gray-300 tracking-wider flex items-center gap-1.5">
                       <Dumbbell className="w-3.5 h-3.5 text-[#E30613]" />
-                      <span>Experience Level</span>
+                      <span>{t.contact.experienceLevel}</span>
                     </label>
                     <select
                       name="experienceLevel"
@@ -378,10 +378,10 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                       onChange={handleChange}
                       className="w-full bg-[#181818] border border-[#2B2B2B] focus:border-[#E30613] focus:ring-1 focus:ring-[#E30613] rounded px-4 py-3 text-sm text-white outline-none cursor-pointer"
                     >
-                      <option value="Beginner (0 - 1 year in gym)">Beginner (0 - 1 year in gym)</option>
-                      <option value="Intermediate (1 - 3 years gym)">Intermediate (1 - 3 years gym)</option>
-                      <option value="Advanced Lifter (4+ years)">Advanced Lifter (4+ years)</option>
-                      <option value="Competitive Athlete">Competitive Athlete</option>
+                      <option value={t.contact.expBeginner}>{t.contact.expBeginner}</option>
+                      <option value={t.contact.expIntermediate}>{t.contact.expIntermediate}</option>
+                      <option value={t.contact.expAdvanced}>{t.contact.expAdvanced}</option>
+                      <option value={t.contact.expAthlete}>{t.contact.expAthlete}</option>
                     </select>
                   </div>
                 </div>
@@ -389,7 +389,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                 {/* Selected Tier Selector */}
                 <div className="space-y-2">
                   <label className="text-xs uppercase font-bold text-gray-300 tracking-wider">
-                    Desired Coaching Program
+                    {t.contact.desiredProgram}
                   </label>
                   <select
                     name="selectedTier"
@@ -406,7 +406,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                 {/* Additional Notes */}
                 <div className="space-y-2">
                   <label className="text-xs uppercase font-bold text-gray-300 tracking-wider">
-                    Injuries, Medical Conditions, or Specific Preferences
+                    {t.contact.injuriesNotes}
                   </label>
                   <textarea
                     name="notes"
@@ -424,13 +424,12 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                   className="w-full py-4 px-8 rounded bg-[#E30613] hover:bg-[#C00510] text-white font-bold uppercase tracking-wider text-sm transition-all duration-200 glow-red flex items-center justify-center gap-3 shadow-xl hover:-translate-y-0.5"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Send Consultation Message on WhatsApp</span>
+                  <span>{t.contact.sendMessage}</span>
                 </button>
 
                 {/* Privacy disclaimer */}
                 <p className="text-[11px] text-gray-400 text-center font-body">
-                  By clicking submit, your structured inquiry is sent securely and directly to Captain Ahmed Mostafa. 
-                  Zero spam, 100% confidentiality guaranteed.
+                  {t.contact.privacyPolicy}
                 </p>
 
               </form>

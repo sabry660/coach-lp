@@ -1,13 +1,17 @@
 import React from 'react';
-import { transformationsData } from '../data/coachData';
+import { useCoachData } from '../data/coachData';
 import { BeforeAfterSlider } from './BeforeAfterSlider';
 import { Flame, Timer, ArrowUpRight, CheckCircle2, Sparkles, SlidersHorizontal } from 'lucide-react';
+import { useTranslations } from '../hooks/useTranslations';
 
 export const Transformations: React.FC = () => {
+  const t = useTranslations();
+  const { transformations } = useCoachData();
+
   return (
-    <section id="transformations" className="py-24 bg-[#0A0A0A] relative border-t border-[#2B2B2B]">
+    <section id="transformations" className="py-24 bg-[#0A0A0A] relative overflow-hidden border-t border-[#2B2B2B] w-full max-w-full">
       {/* Background Ambient Glow */}
-      <div className="absolute right-1/4 top-1/2 -translate-y-1/2 w-80 h-80 bg-[#E30613]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute right-0 sm:right-1/4 top-1/2 -translate-y-1/2 w-72 sm:w-80 h-72 sm:h-80 bg-[#E30613]/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -15,19 +19,17 @@ export const Transformations: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#1A1A1A] border border-[#2B2B2B] text-xs font-bold uppercase tracking-widest text-[#E30613]">
             <Flame className="w-3.5 h-3.5" />
-            Proven Track Record
+            {t.transformations.badge}
           </div>
-          <h2 className="font-heading text-4xl sm:text-6xl text-white tracking-wider">
-            REAL CLIENT <span className="text-[#E30613]">TRANSFORMATIONS</span>
-          </h2>
+          <h2 className="font-heading text-4xl sm:text-6xl text-white tracking-wider" dangerouslySetInnerHTML={{ __html: t.transformations.headline }} />
           <p className="font-body text-gray-400 text-sm sm:text-base">
-            Drag the interactive slider to see undeniable before and after results. Real science, disciplined adherence, and surgical nutrition.
+            {t.transformations.description}
           </p>
         </div>
 
         {/* 3-Column Grid of Before/After Sliders */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {transformationsData.map((item) => {
+          {transformations.map((item) => {
             return (
               <div
                 key={item.id}
@@ -67,21 +69,21 @@ export const Transformations: React.FC = () => {
                         <h3 className="font-heading text-2xl text-white tracking-wide">
                           {item.clientName}
                         </h3>
-                        <span className="text-xs text-gray-400">Age: {item.age} • AFIT 1-on-1 Client</span>
+                        <span className="text-xs text-gray-400">Age: {item.age} • {t.transformations.afitClient}</span>
                       </div>
                       <span className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-400 bg-emerald-950/50 border border-emerald-500/20 px-2 py-0.5 rounded">
-                        <CheckCircle2 className="w-3 h-3" /> Completed
+                        <CheckCircle2 className="w-3 h-3" /> {t.transformations.completed}
                       </span>
                     </div>
 
                     {/* Numeric Stats Highlight Bar */}
                     <div className="grid grid-cols-2 gap-2 p-2.5 rounded bg-[#181818] border border-[#2B2B2B]">
                       <div>
-                        <div className="text-[10px] uppercase font-bold text-gray-400">Weight Delta</div>
+                        <div className="text-[10px] uppercase font-bold text-gray-400">{t.transformations.weightDelta}</div>
                         <div className="font-heading text-xl text-[#E30613]">{item.weightChange}</div>
                       </div>
                       <div>
-                        <div className="text-[10px] uppercase font-bold text-gray-400">Body Fat Delta</div>
+                        <div className="text-[10px] uppercase font-bold text-gray-400">{t.transformations.bodyFatDelta}</div>
                         <div className="font-heading text-xl text-white">{item.bodyFatChange}</div>
                       </div>
                     </div>
@@ -109,7 +111,7 @@ export const Transformations: React.FC = () => {
                       href="#contact"
                       className="w-full py-2.5 px-3 rounded bg-[#1C1C1C] hover:bg-[#E30613] text-gray-300 hover:text-white text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 shadow-md"
                     >
-                      <span>Achieve Similar Result</span>
+                      <span>{t.transformations.achieveResult}</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
@@ -122,8 +124,7 @@ export const Transformations: React.FC = () => {
         {/* Transformation Guarantee Note */}
         <div className="mt-12 text-center">
           <p className="text-xs text-gray-400 font-body">
-            * Individual results vary based on starting baseline, biological adherence, and consistency. 
-            All transformations shown are verified 1-on-1 clients of Captain Ahmed Mostafa.
+            {t.transformations.disclaimer}
           </p>
         </div>
 

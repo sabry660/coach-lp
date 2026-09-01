@@ -1,16 +1,20 @@
 import React from 'react';
-import { pricingTiersData } from '../data/coachData';
+import { useCoachData } from '../data/coachData';
 import { Check, Zap, Crown, ArrowRight, Shield } from 'lucide-react';
+import { useTranslations } from '../hooks/useTranslations';
 
 interface PricingProps {
   onSelectTier: (tierId: string) => void;
 }
 
 export const Pricing: React.FC<PricingProps> = ({ onSelectTier }) => {
+  const t = useTranslations();
+  const { pricingTiers } = useCoachData();
+
   return (
-    <section id="pricing" className="py-24 bg-[#000000] relative border-t border-[#2B2B2B]">
+    <section id="pricing" className="py-24 bg-[#000000] relative overflow-hidden border-t border-[#2B2B2B] w-full max-w-full">
       {/* Background radial highlight behind center card */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#E30613]/8 blur-[160px] pointer-events-none" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[700px] h-[500px] bg-[#E30613]/8 blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -18,19 +22,17 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectTier }) => {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#1A1A1A] border border-[#2B2B2B] text-xs font-bold uppercase tracking-widest text-[#E30613]">
             <Crown className="w-3.5 h-3.5" />
-            Investment in Excellence
+            {t.pricing.badge}
           </div>
-          <h2 className="font-heading text-4xl sm:text-6xl text-white tracking-wider">
-            SUBSCRIPTION <span className="text-[#E30613]">TIERS & PRICING</span>
-          </h2>
+          <h2 className="font-heading text-4xl sm:text-6xl text-white tracking-wider" dangerouslySetInnerHTML={{ __html: t.pricing.headline }} />
           <p className="font-body text-gray-400 text-sm sm:text-base">
-            Transparent, zero-nonsense coaching tiers tailored to your ambition level. Limited intake slots per month to preserve elite coaching quality.
+            {t.pricing.description}
           </p>
         </div>
 
         {/* 3 Pricing Boxes Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-          {pricingTiersData.map((tier) => {
+          {pricingTiers.map((tier) => {
             const isPopular = tier.highlighted;
 
             return (
@@ -84,7 +86,7 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectTier }) => {
                   {/* Features List */}
                   <div className="space-y-3.5 mb-8">
                     <div className="text-[11px] uppercase tracking-wider font-bold text-gray-400">
-                      What is included:
+                      {t.pricing.whatIncluded}
                     </div>
                     {tier.features.map((feature, fIdx) => (
                       <div key={fIdx} className="flex items-start gap-3">
@@ -120,7 +122,7 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectTier }) => {
                   </button>
                   <div className="text-center mt-2.5">
                     <span className="text-[10px] text-gray-400 flex items-center justify-center gap-1">
-                      <Shield className="w-3 h-3 text-gray-400" /> Cancel or adjust anytime • No lock-in contracts
+                      <Shield className="w-3 h-3 text-gray-400" /> {t.pricing.cancelAnytime}
                     </span>
                   </div>
                 </div>
@@ -133,13 +135,13 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectTier }) => {
         {/* Custom Group & Corporate Inquiry Strip */}
         <div className="mt-12 text-center p-4 rounded bg-[#111111] border border-[#2B2B2B] max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <span className="text-xs text-gray-300">
-            Looking for Competition Prep or Corporate Group Coaching?
+            {t.pricing.customGroup}
           </span>
           <a
             href="#contact"
             className="text-xs font-bold uppercase tracking-wider text-[#E30613] hover:underline"
           >
-            Request Custom Consultation →
+            {t.pricing.requestCustom}
           </a>
         </div>
 

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { galleryData } from '../data/coachData';
+import { useCoachData } from '../data/coachData';
 import { GalleryItem } from '../types';
 import { Maximize2, Camera, Eye } from 'lucide-react';
+import { useTranslations } from '../hooks/useTranslations';
 
 interface GalleryProps {
   onOpenLightbox: (item: GalleryItem) => void;
@@ -9,32 +10,32 @@ interface GalleryProps {
 
 export const Gallery: React.FC<GalleryProps> = ({ onOpenLightbox }) => {
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
+  const t = useTranslations();
+  const { gallery } = useCoachData();
 
   const handleImageError = (id: string) => {
     setFailedImages((prev) => ({ ...prev, [id]: true }));
   };
 
   return (
-    <section id="gallery" className="py-24 bg-[#0A0A0A] relative border-t border-[#2B2B2B]">
+    <section id="gallery" className="py-24 bg-[#0A0A0A] relative overflow-hidden border-t border-[#2B2B2B] w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#1A1A1A] border border-[#2B2B2B] text-xs font-bold uppercase tracking-widest text-[#E30613]">
             <Camera className="w-3.5 h-3.5" />
-            Training Environment & Action
+            {t.gallery.badge}
           </div>
-          <h2 className="font-heading text-4xl sm:text-6xl text-white tracking-wider">
-            AFIT METHOD <span className="text-[#E30613]">GALLERY</span>
-          </h2>
+          <h2 className="font-heading text-4xl sm:text-6xl text-white tracking-wider" dangerouslySetInnerHTML={{ __html: t.gallery.headline }} />
           <p className="font-body text-gray-400 text-sm sm:text-base">
-            Glimpse inside the high-performance training culture, elite barbell equipment, and kinematic coaching sessions.
+            {t.gallery.description}
           </p>
         </div>
 
         {/* 4-Column Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {galleryData.map((item) => {
+          {gallery.map((item) => {
             const isFailed = failedImages[item.id];
             const displayImg = isFailed ? item.fallbackImage : item.image;
 

@@ -1,82 +1,206 @@
 import { Certification, Transformation, PricingTier, GalleryItem, Testimonial, FaqItem, AppSettings } from '../types';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const defaultSettings: AppSettings = {
   whatsappNumber: '201000000000', // Default international format (Egypt +20)
-  coachName: 'Captain Ahmed Mostafa',
-  coachTitle: 'Elite Fitness & Clinical Sports Nutritionist',
+  coachName: 'الكابتن أحمد مصطفى',
+  coachTitle: 'أخصائي اللياقة النخبوية والتغذية الرياضية السريرية',
   email: 'coach.ahmedmostafa@afitmethod.com',
   instagramUrl: 'https://instagram.com/ahmedmostafa_afit',
   facebookUrl: 'https://facebook.com/CaptainAhmedMostafaFitness',
   tiktokUrl: 'https://tiktok.com/@captain_ahmed_mostafa',
 };
 
-export const certificationsData: Certification[] = [
+// ==================== CERTIFICATIONS DATA ====================
+export const certificationsDataAr: Certification[] = [
+  {
+    id: 'tass-uk',
+    name: 'مخطوطة المنحة الرياضية للموهوبين (TASS)',
+    shortCode: 'TASS UK',
+    organization: 'حكومة المملكة المتحدة ومخطوطة المنحة الرياضية للموهوبين',
+    country: 'المملكة المتحدة',
+    description: 'متخصص في تكييف القوة للرياضيين النخبويين عاليي الأداء، والميكانيكا الحيوية، والتطور الرياضي طويل الأمد.',
+    badgeYear: 'معتمد في المملكة المتحدة',
+    certificateImage: '/certificates/1.jpeg',
+    certificateFallbackImage: 'https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&w=1000&q=80',
+    specialtyDetails: [
+      'التطور البدني للرياضيين الأولمبيين والوطنيين عاليي الأداء',
+      'تتبع السرعة الحركية وتحليل القدرة الانفجارية',
+      'الإدارة المتقدمة للحمل العضلي واستعادة الجهاز العصبي المركزي (CNS)',
+      'التحقق من معايير علوم الرياضية الحكومية في المملكة المتحدة',
+    ],
+  },
+  {
+    id: 'ace-cpt',
+    name: 'المجلس الأمريكي للتمارين الرياضية (ACE)',
+    shortCode: 'ACE',
+    organization: 'المجلس الأمريكي للتمارين الرياضية',
+    country: 'الولايات المتحدة',
+    description: 'شهادة المعيار الذهبي في التدريب المتكامل لللياقة، وديناميكيات التمارين التصحيحية، وتكييف الأيض.',
+    badgeYear: 'دولي',
+    certificateImage: '/certificates/2.jpeg',
+    certificateFallbackImage: 'https://images.unsplash.com/photo-1584697964190-7bb9348d374f?auto=format&fit=crop&w=1000&q=80',
+    specialtyDetails: [
+      'تخصص نموذج التدريب المتكامل لللياقة (IFT) من ACE',
+      'محاذاة السلسلة الحركية التصحيحية وإصلاح الخلل الوضعي',
+      'تقسيم التدريب القلبي التنفسي عبر المناطق 1-4',
+      'الالتزام بالتغذية السلوكية والميكانيكا الحيوية لنمط الحياة',
+    ],
+  },
+  {
+    id: 'iffc',
+    name: 'الاتحاد الدولي لمدربي اللياقة',
+    shortCode: 'IFFC',
+    organization: 'الاتحاد الدولي لمدربي اللياقة',
+    country: 'عالمي',
+    description: 'اعتماد التدريب الرئيسي للتقسيم المتقدم للتضخم، وإعادة تكوين الجسم، والتحضير النخبوي للمسرح.',
+    badgeYear: 'مدرب رئيسي',
+    certificateImage: '/certificates/3.jpeg',
+    certificateFallbackImage: 'https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=1000&q=80',
+    specialtyDetails: [
+      'بروتوكولات تكييف كمال الأجسام واللياقة البدنية على مستوى المسابقات',
+      'برمجة التضخم مقارنة بين التوتر الميكانيكي والإجهاد الأيضي',
+      'تعويض الماء والشوارد والجليكوجين الفائق في أسبوع الذروة',
+      'ملف المقاومة المتقدم وعلاقة طول التوتر العضلي',
+    ],
+  },
+  {
+    id: 'iohs',
+    name: 'المنظمة الدولية للصحة وعلوم الرياضة',
+    shortCode: 'IOHS',
+    organization: 'المنظمة الدولية لعلوم الصحة',
+    country: 'أوروبا / دولي',
+    description: 'معتمد في فسيولوجيا التمارين السريرية، وبروتوكولات منع الإصابات، وإعادة تأهيل الجهاز العضلي الهيكلي.',
+    badgeYear: 'أخصائي معتمد',
+    certificateImage: '/certificates/4.jpeg',
+    certificateFallbackImage: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1000&q=80',
+    specialtyDetails: [
+      'وصف التمارين السريرية لاستعادة الجهاز العضلي الهيكلي',
+      'حماية فك الضغط العمودي، وكفة الدوران، ووتر الرضفة',
+      'إدارة تراكم اللاكتات في الدم وبناء القاعدة الهوائية',
+      'تحليل المؤشرات الحيوية وتخفيف التعب النظامي',
+    ],
+  },
+  {
+    id: 'london-univ',
+    name: 'جامعة لندن الدولية',
+    shortCode: 'جامعة لندن الدولية',
+    organization: 'كلية علوم الرياضة والتغذية السريرية',
+    country: 'المملكة المتحدة',
+    description: 'دبلوم متقدم في التغذية الرياضية السريرية، وتقسيم المغذيات الدقيقة، والتكيف الأيضي.',
+    badgeYear: 'دبلوم أكاديمي',
+    certificateImage: '/certificates/5.jpeg',
+    certificateFallbackImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80',
+    specialtyDetails: [
+      'دبلوم الدراسات العليا الأكاديمي في التغذية الرياضية السريرية',
+      'التأثير الحراري للتغذية وتوازن هرمونات الغدد الصماء (الغدة الدرقية، اللبتين، الكورتيزول)',
+      'دورة الكربوهيدرات الدقيقة وتقسيم المغذيات أثناء التمرين',
+      'تصميم مكملات سريرية قائمة على الأدلة',
+    ],
+  },
+  {
+    id: 'egypt-ministry',
+    name: 'وزارة الشباب والرياضة المصرية',
+    shortCode: 'وزارة الرياضة',
+    organization: 'وزارة الشباب والرياضة المصرية (الاعتماد الرسمي)',
+    country: 'مصر',
+    description: 'مدرب لياقة بدنية رئيسي مرخص من الدولة ومدرب أداء معترف به لقيادة اللياقة الوطنية.',
+    badgeYear: 'رخصة رسمية',
+    certificateImage: '/certificates/6.jpeg',
+    certificateFallbackImage: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=80',
+    specialtyDetails: [
+      'رخصة حكومية رسمية للتدريب الرياضي عالي الأداء',
+      'الامتثال للتكييف البدني للفريق الرياضي الوطني',
+      'معايير أخلاقيات التدريب المهني وحماية صحة الرياضيين',
+      'اعتماد مدرب وطني معترف به',
+    ],
+  },
+  {
+    id: 'asca',
+    name: 'رابطة القوة والتكييف الأسترالية',
+    shortCode: 'ASCA',
+    organization: 'رابطة القوة والتكييف الأسترالية',
+    country: 'أستراليا',
+    description: 'معتمد في ميكانيكا الرفع الأولمبي، وتحليل السرعة-القوة، والتقسيم الرياضي النخبوي.',
+    badgeYear: 'معتمد المستوى 2',
+    certificateImage: '/certificates/7.jpeg',
+    certificateFallbackImage: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80',
+    specialtyDetails: [
+      'تحليل مسار رفع الأثقال الأولمبي (النظف، السحب، الرمي)',
+      'إتقان نماذج التقسيم الخطي والمتذبذب والكتلي',
+      'تحسين منحنى القوة-السرعة للسرعة الخام والقوة',
+      'إرشادات التنفيذ الآمن ميكانيكياً للتمارين المركبة الثقيلة',
+    ],
+  },
+];
+
+export const certificationsDataEn: Certification[] = [
   {
     id: 'tass-uk',
     name: 'Talented Athlete Scholarship Scheme (TASS)',
     shortCode: 'TASS UK',
-    organization: 'UK Government & Talented Athlete Scholarship Scheme',
+    organization: 'UK Government & TASS Athletic Accreditation',
     country: 'United Kingdom',
-    description: 'Specialized in high-performance elite athlete strength conditioning, biomechanics, and long-term athletic development.',
+    description: 'Specialized in elite athletic strength conditioning, kinematics, and long-term athletic development.',
     badgeYear: 'UK Accredited',
-    certificateImage: '/assets/images/cert-tass.jpg',
+    certificateImage: '/certificates/1.jpeg',
     certificateFallbackImage: 'https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&w=1000&q=80',
     specialtyDetails: [
-      'High-performance Olympic and national athlete physical development',
-      'Kinematic velocity tracking and explosive power profiling',
-      'Advanced muscular load management and central nervous system (CNS) recovery',
+      'Olympic & national high-performance athlete physical development',
+      'Kinetic velocity tracking & explosive power analysis',
+      'Advanced muscular load management & CNS recovery',
       'UK Government sports science standard verification',
     ],
   },
   {
     id: 'ace-cpt',
-    name: 'American Council on Exercise (ACE)',
+    name: 'American Council on Exercise (ACE CPT)',
     shortCode: 'ACE',
     organization: 'American Council on Exercise',
     country: 'United States',
-    description: 'Gold-standard certification in integrated fitness training, corrective exercise kinematics, and metabolic conditioning.',
+    description: 'Gold-standard certification in integrated fitness training, corrective exercise dynamics, and metabolic conditioning.',
     badgeYear: 'International',
-    certificateImage: '/assets/images/cert-ace.jpg',
+    certificateImage: '/certificates/2.jpeg',
     certificateFallbackImage: 'https://images.unsplash.com/photo-1584697964190-7bb9348d374f?auto=format&fit=crop&w=1000&q=80',
     specialtyDetails: [
       'ACE Integrated Fitness Training (IFT) model specialization',
-      'Corrective kinetic chain alignment and postural imbalance repair',
-      'Cardiorespiratory training periodization across Zones 1-4',
-      'Behavioral nutrition adherence and lifestyle biomechanics',
+      'Corrective kinetic chain alignment & postural correction',
+      'Cardiorespiratory periodization across Zones 1-4',
+      'Behavioral nutrition adherence & lifestyle biomechanics',
     ],
   },
   {
     id: 'iffc',
-    name: 'International Federation of Fitness Coaches',
+    name: 'International Fitness Instructors Federation',
     shortCode: 'IFFC',
-    organization: 'International Federation of Fitness Coaches',
+    organization: 'International Fitness Instructors Federation',
     country: 'Global',
-    description: 'Master coaching accreditation for advanced hypertrophy periodization, body recomposition, and elite stage preparation.',
+    description: 'Master Coach certification for advanced hypertrophy periodization, body recomposition, and elite stage prep.',
     badgeYear: 'Master Coach',
-    certificateImage: '/assets/images/cert-iffc.jpg',
+    certificateImage: '/certificates/3.jpeg',
     certificateFallbackImage: 'https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=1000&q=80',
     specialtyDetails: [
-      'Contest-level bodybuilding and physique conditioning protocols',
-      'Mechanical tension vs. metabolic stress hypertrophic programming',
-      'Peak week water, electrolyte, and glycogen supercompensation',
-      'Advanced resistance profile and muscular length-tension relationship',
+      'Competition-level bodybuilding & physique conditioning protocols',
+      'Hypertrophy programming: mechanical tension vs metabolic stress',
+      'Peak week water, electrolyte, and super-glycogen manipulation',
+      'Advanced resistance profiling & length-tension relationships',
     ],
   },
   {
     id: 'iohs',
-    name: 'International Organization of Health & Sports Science',
+    name: 'International Organization for Health & Sports Science',
     shortCode: 'IOHS',
-    organization: 'International Organization of Health Science',
-    country: 'Europe / Int.',
+    organization: 'International Health Science Organization',
+    country: 'Europe / International',
     description: 'Certified in clinical exercise physiology, injury prevention protocols, and musculoskeletal rehabilitation.',
     badgeYear: 'Certified Specialist',
-    certificateImage: '/assets/images/cert-iohs.jpg',
+    certificateImage: '/certificates/4.jpeg',
     certificateFallbackImage: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1000&q=80',
     specialtyDetails: [
       'Clinical exercise prescription for musculoskeletal recovery',
-      'Spinal decompression, rotator cuff, and patellar tendon safeguarding',
-      'Blood lactate accumulation management and aerobic base building',
-      'Biomarker analysis and systemic fatigue mitigation',
+      'Spinal decompression, rotator cuff, & patellar tendon protection',
+      'Blood lactate accumulation management & aerobic base building',
+      'Biomarker analysis & systemic fatigue mitigation',
     ],
   },
   {
@@ -85,70 +209,135 @@ export const certificationsData: Certification[] = [
     shortCode: 'London Int. Univ.',
     organization: 'Faculty of Sports Science & Clinical Nutrition',
     country: 'United Kingdom',
-    description: 'Advanced Diploma in Clinical Sports Nutrition, Micronutrient Partitioning, and Metabolic Adaptation.',
+    description: 'Advanced diploma in clinical sports nutrition, micronutrient periodization, and metabolic adaptation.',
     badgeYear: 'Academic Diploma',
-    certificateImage: '/assets/images/cert-london.jpg',
+    certificateImage: '/certificates/5.jpeg',
     certificateFallbackImage: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80',
     specialtyDetails: [
-      'Academic Postgraduate Diploma in Clinical Sports Nutrition',
-      'Thermic effect of feeding and endocrine hormone balance (Thyroid, Leptin, Cortisol)',
-      'Precision carbohydrate cycling and intra-workout nutrient partitioning',
-      'Evidence-based clinical supplement stack design',
+      'Postgraduate academic diploma in clinical sports nutrition',
+      'Thermic effect of feeding & endocrine hormone balance (Thyroid, Leptin, Cortisol)',
+      'Precision carb cycling & peri-workout nutrient timing',
+      'Evidence-based clinical supplementation design',
     ],
   },
   {
     id: 'egypt-ministry',
-    name: 'Egyptian Ministry of Youth and Sports',
-    shortCode: 'Ministry of Sports',
-    organization: 'Egyptian Ministry of Youth and Sports (Official Accreditation)',
+    name: 'Egyptian Ministry of Youth & Sports',
+    shortCode: 'Youth & Sports Ministry',
+    organization: 'Egyptian Ministry of Youth & Sports (Official Accreditation)',
     country: 'Egypt',
-    description: 'Official state-licensed Head Fitness Trainer & Performance Coach recognized for national fitness leadership.',
+    description: 'State-licensed Master Fitness Trainer & performance coach recognized for national athletic leadership.',
     badgeYear: 'Official License',
-    certificateImage: '/assets/images/cert-ministry.jpg',
+    certificateImage: '/certificates/6.jpeg',
     certificateFallbackImage: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=80',
     specialtyDetails: [
-      'Official government license for high-performance athletic coaching',
+      'Official state license for high-performance athletic coaching',
       'National athletic team physical conditioning compliance',
-      'Standards of professional coaching ethics and athlete health protection',
-      'Recognized national trainer credential',
+      'Professional coaching ethics & athlete health safeguards',
+      'Recognized national master trainer credentials',
     ],
   },
   {
     id: 'asca',
-    name: 'Australian Strength and Conditioning Association',
+    name: 'Australian Strength & Conditioning Association',
     shortCode: 'ASCA',
     organization: 'Australian Strength & Conditioning Association',
     country: 'Australia',
-    description: 'Accredited in Olympic lift mechanics, power-velocity profiling, and elite sports periodization.',
+    description: 'Certified in Olympic lifting mechanics, force-velocity analysis, and elite athletic periodization.',
     badgeYear: 'Level 2 Certified',
-    certificateImage: '/assets/images/cert-asca.jpg',
+    certificateImage: '/certificates/7.jpeg',
     certificateFallbackImage: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80',
     specialtyDetails: [
       'Olympic weightlifting trajectory analysis (Clean, Jerk, Snatch)',
-      'Linear, undulating, and block periodization model masteries',
-      'Force-velocity curve optimization for raw speed and power',
-      'Biomechanically safe heavy compound execution guidelines',
+      'Mastery of linear, undulating, & block periodization models',
+      'Force-velocity curve optimization for raw speed & power',
+      'Mechanically sound execution guidelines for heavy compound lifts',
     ],
   },
 ];
 
-export const transformationsData: Transformation[] = [
+// Default export fallback
+export const certificationsData = certificationsDataAr;
+
+
+// ==================== TRANSFORMATIONS DATA ====================
+export const transformationsDataAr: Transformation[] = [
   {
     id: 'trans-1',
-    clientName: 'Karim E.',
-    timeframe: '12 Weeks',
+    clientName: 'كريم ع.',
+    timeframe: '12 أسبوع',
     age: 29,
-    weightChange: '-14 kg Fat',
+    weightChange: '-14 كجم دهون',
     bodyFatChange: '26% → 11%',
-    beforeImage: '/assets/images/transform-1-before.jpg',
-    afterImage: '/assets/images/transform-1-after.jpg',
+    beforeImage: '/bofore,after/1/before1.jpeg',
+    afterImage: '/bofore,after/1/after 1.jpeg',
     fallbackBeforeImage: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80',
     fallbackAfterImage: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80',
-    description: 'Corporate Manager overcoming metabolic stagnation. Achieved deep abdominal definition, 80kg bench press increase, and doubled energetic vitality.',
-    tag: 'Fat Loss & Core Shred',
+    description: 'مدير مؤسسي يتغلب على الركود الأيضي. حقق تعريف بطني عميق، زيادة 80 كجم في الضغط على البنش، ومضاعفة الحيوية الطاقية.',
+    tag: 'فقدان الدهون وتقطيع الجذع',
     highlights: [
-      'Lost 14 kg pure adipose tissue without muscle breakdown',
-      'Carbohydrate cycling tailored around executive work hours',
+      'فقد 14 كجم من الأنسجة الدهنية النقية دون تكسر العضلات',
+      'دورة الكربوهيدرات مخصصة حول ساعات العمل التنفيذية',
+      'إصلاح ميل الحوض الأمامي من خلال عمل السلسلة الخلفية المستهدف',
+    ],
+  },
+  {
+    id: 'trans-2',
+    clientName: 'يوسف س.',
+    timeframe: '16 أسبوع',
+    age: 34,
+    weightChange: '-18.5 كجم',
+    bodyFatChange: '31% → 13%',
+    beforeImage: '/bofore,after/2/before2.jpeg',
+    afterImage: '/bofore,after/2/after2.jpeg',
+    fallbackBeforeImage: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=800&q=80',
+    fallbackAfterImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
+    description: 'تحويل وضعية الجلوس الخاملة إلى تكييف رياضي. تصحيح وضعية كاملة، حل آلام أسفل الظهر، وذروة الأوعية الدموية.',
+    tag: 'إعادة تكوين كامل للجسم',
+    highlights: [
+      'تخفيض إجمالي 18.5 كجم في كتلة الجسم مع احتفاظ عضلي كبير',
+      'إعادة تأهيل الانزعاج القطني المزمن من خلال إتقان مفصل الورك',
+      'بناء إطار V-taper صلب وتعريف كتف عميق',
+    ],
+  },
+  {
+    id: 'trans-3',
+    clientName: 'معتز ح.',
+    timeframe: '24 أسبوع',
+    age: 26,
+    weightChange: '+7.5 كجم عضلات نحيفة',
+    bodyFatChange: '14% → 8.5%',
+    beforeImage: '/bofore,after/3/before3.jpeg',
+    afterImage: '/bofore,after/3/after3.jpeg',
+    fallbackBeforeImage: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80',
+    fallbackAfterImage: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80',
+    description: 'تكييف تحضير المسرح واللياقة البدنية. بروتوكولات الحمل الزائد التدريجي الثقيل مدمجة مع دورة كربوهيدرات جراحية وتركيز ثلاثي الأبعاد على الدلت.',
+    tag: 'التضخم وتحضير المسابقات',
+    highlights: [
+      'اكتسب 7.5 كجم من أنسجة العضلات الانقباضية الكثيفة',
+      'خفض دهون الجسم إلى رقم واحد مع بطن عضلية كاملة',
+      'إتقان معايرة الصوديوم والماء في أسبوع الذروة',
+    ],
+  },
+];
+
+export const transformationsDataEn: Transformation[] = [
+  {
+    id: 'trans-1',
+    clientName: 'Kareem A.',
+    timeframe: '12 Weeks',
+    age: 29,
+    weightChange: '-14kg Fat',
+    bodyFatChange: '26% → 11%',
+    beforeImage: '/bofore,after/1/before1.jpeg',
+    afterImage: '/bofore,after/1/after 1.jpeg',
+    fallbackBeforeImage: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80',
+    fallbackAfterImage: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80',
+    description: 'Corporate executive overcoming metabolic stagnation. Achieved deep abdominal definition, +80kg bench press increase, and doubled daily energy.',
+    tag: 'Fat Loss & Core Shredding',
+    highlights: [
+      'Lost 14kg of pure adipose tissue without muscle breakdown',
+      'Custom carbohydrate cycling fitted around executive work hours',
       'Fixed anterior pelvic tilt through targeted posterior chain work',
     ],
   },
@@ -157,18 +346,18 @@ export const transformationsData: Transformation[] = [
     clientName: 'Youssef S.',
     timeframe: '16 Weeks',
     age: 34,
-    weightChange: '-18.5 kg',
+    weightChange: '-18.5kg Body Mass',
     bodyFatChange: '31% → 13%',
-    beforeImage: '/assets/images/transform-2-before.jpg',
-    afterImage: '/assets/images/transform-2-after.jpg',
+    beforeImage: '/bofore,after/2/before2.jpeg',
+    afterImage: '/bofore,after/2/after2.jpeg',
     fallbackBeforeImage: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=800&q=80',
     fallbackAfterImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
-    description: 'Transformed sedentary desk posture into athletic conditioning. Complete posture correction, resolved lower-back pain, and peak vascularity.',
-    tag: 'Complete Body Recomp',
+    description: 'Transformed sedentary desk posture to athletic conditioning. Complete posture correction, resolved lower back pain, and peak vascularity.',
+    tag: 'Full Body Recomposition',
     highlights: [
-      '18.5 kg total reduction in body mass with significant muscle retention',
-      'Rehabilitated chronic lumbar discomfort through hip-hinge mastery',
-      'Built a solid V-taper frame and deep shoulder definition',
+      'Total 18.5kg reduction in body mass with significant muscle retention',
+      'Rehabilitated chronic lumbar discomfort through hip hinge mastery',
+      'Built solid V-taper frame and deep shoulder definition',
     ],
   },
   {
@@ -176,38 +365,100 @@ export const transformationsData: Transformation[] = [
     clientName: 'Moataz H.',
     timeframe: '24 Weeks',
     age: 26,
-    weightChange: '+7.5 kg Lean Muscle',
+    weightChange: '+7.5kg Lean Muscle',
     bodyFatChange: '14% → 8.5%',
-    beforeImage: '/assets/images/transform-3-before.jpg',
-    afterImage: '/assets/images/transform-3-after.jpg',
+    beforeImage: '/bofore,after/3/before3.jpeg',
+    afterImage: '/bofore,after/3/after3.jpeg',
     fallbackBeforeImage: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80',
     fallbackAfterImage: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80',
-    description: 'Stage & physique prep conditioning. Heavy progressive overload protocols combined with surgical carbohydrate cycling and 3D deltoid focus.',
+    description: 'Stage prep & physique conditioning. Heavy progressive overload protocols combined with surgical carb cycling and 3D delt focus.',
     tag: 'Hypertrophy & Contest Prep',
     highlights: [
-      'Gained 7.5 kg of dense contractile muscle tissue',
-      'Dropped body fat into single digits with full muscle bellies',
-      'Peak week sodium and water calibration mastered',
+      'Gained 7.5kg of dense contractile muscle tissue',
+      'Reduced body fat to single digits with full muscle bellies',
+      'Mastered peak week sodium and water calibration',
     ],
   },
 ];
 
-export const pricingTiersData: PricingTier[] = [
+export const transformationsData = transformationsDataAr;
+
+
+// ==================== PRICING TIERS DATA ====================
+export const pricingTiersDataAr: PricingTier[] = [
+  {
+    id: 'starter',
+    name: 'المستوى المبتدئ',
+    price: '$99',
+    period: '/شهر',
+    description: 'الأساس الهيكلي الأساسي للأفراد المنضبطين الذين يحتاجون إلى اتجاه واضح وتغذية محسوبة.',
+    features: [
+      'تقسيم تمرين مخصص (الجيم أو المنزل)',
+      'مخطط المغذيات الكبرى والسعرات الحرارية المخصص',
+      'استراتيجية وتوقيت مكملات التغذية',
+      'تدقيق التقدم وتكوين الجسم كل أسبوعين',
+      'تحليل شكل التمرين وتنفيذ الفيديو',
+      'دعم تدريب واتساب المباشر (استجابة < 12 ساعة)',
+    ],
+    ctaText: 'اختر المستوى المبتدئ',
+  },
+  {
+    id: 'pro-elite',
+    name: 'التدريب النخبوي الاحترافي',
+    price: '$199',
+    period: '/شهر',
+    highlighted: true,
+    badge: 'الأكثر شعبية',
+    description: 'نظام التحويل الرائد النهائي لـ AFIT. دقة لا تتنازل، تغييرات تكيفية أسبوعية، وإعادة تكوين سريعة للجسم.',
+    features: [
+      'برنامج كامل للقوة والتضخم مقسماً',
+      'دورة ديناميكية أسبوعية للكربوهيدرات والسعرات الحرارية',
+      'تدقيق يومي للتغذية الراجعة وتحسين النوم',
+      'فحص فيديو شامل أسبوعي واستراتيجية',
+      'تغذية غير محدودة لشكل الفيديو وإصلاحات ميكانيكية',
+      'خط واتساب VIP أولوية 24/7 مع استجابة سريعة',
+      'وصول حصري إلى خزنة فيديو التمارين الخاصة بـ AFIT',
+      'دليل غذائي للأكل خارج المنزل والسفر',
+    ],
+    ctaText: 'قدم للتدريب النخبوي الاحترافي',
+  },
+  {
+    id: 'vip-1on1',
+    name: 'الإرشاد الشخصي VIP 1-على-1',
+    price: '$349',
+    period: '/شهر',
+    badge: 'حصري • مقاعد محدودة',
+    description: 'تدريب تنفيذي عالي التفاعل مع إرشاد شخصي مباشر 1-على-1، تحضير المسابقات، أو إعادة تقييم شاملة لنمط الحياة التنفيذي المكثف.',
+    features: [
+      'كل شيء في التدريب النخبوي الاحترافي مشمول',
+      'مكالمة فيديو استراتيجية مباشرة أسبوعية 1-على-1',
+      'بروتوكول أسبوع الذروة للمسابقات / المسرح / التصوير',
+      'إرشاد تحسين المؤشرات الحيوية والهرمونات من تحاليل الدم',
+      'موافقات وجبات المطاعم والسفر في الوقت الفعلي',
+      'وصول مباشر لملاحظات صوتية واتساب للكابتن أحمد',
+      'تعديلات طارئة للجدول وإعادة برمجة أولوية',
+      'خطة تكييف للكارديو ومناطق معدل ضربات القلب مخصصة',
+    ],
+    ctaText: 'قدم للإرشاد VIP',
+  },
+];
+
+export const pricingTiersDataEn: PricingTier[] = [
   {
     id: 'starter',
     name: 'Starter Tier',
     price: '$99',
     period: '/month',
-    description: 'Essential structured foundation for disciplined individuals needing clear direction and calculated nutrition.',
+    description: 'Essential structural foundation for disciplined individuals needing clear direction & calculated nutrition.',
     features: [
-      'Personalized Workout Split (Gym or Home)',
-      'Custom Macronutrient & Calorie Blueprint',
-      'Supplement Stack Strategy & Timing',
-      'Bi-Weekly Progress & Body Composition Audit',
-      'Exercise Form & Video Execution Analysis',
-      'Direct WhatsApp Coaching Support (Response < 12h)',
+      'Customized workout split (Gym or Home)',
+      'Tailored macro & calorie blueprint',
+      'Nutritional supplement timing & strategy',
+      'Bi-weekly progress & body composition audit',
+      'Exercise form & execution video analysis',
+      'Direct WhatsApp coaching support (< 12h response)',
     ],
-    ctaText: 'Choose Starter Tier',
+    ctaText: 'Select Starter Tier',
   },
   {
     id: 'pro-elite',
@@ -215,17 +466,17 @@ export const pricingTiersData: PricingTier[] = [
     price: '$199',
     period: '/month',
     highlighted: true,
-    badge: 'MOST POPULAR',
-    description: 'The definitive AFIT flagship transformation system. Uncompromising precision, weekly adaptive changes, and rapid body recomp.',
+    badge: 'Most Popular',
+    description: 'The premier flagship AFIT transformation system. Zero compromise, weekly adaptive changes, & rapid recomposition.',
     features: [
-      'Full Periodized Strength & Hypertrophy Program',
-      'Dynamic Weekly Carbohydrate & Calorie Cycling',
-      'Daily Biofeedback & Sleep Optimization Audits',
-      'Weekly Comprehensive Video Check-in & Strategy',
-      'Unlimited Video Form Feedback & Biomechanical Fixes',
-      'Priority 24/7 WhatsApp VIP Line with Fast Response',
-      'Exclusive Access to AFIT Private Video Exercise Vault',
-      'Eating Out & Travel Nutritional Playbook',
+      'Complete periodized strength & hypertrophy program',
+      'Weekly dynamic carbohydrate & calorie cycling',
+      'Daily check-ins & sleep optimization feedback',
+      'Comprehensive weekly video audit & strategy session',
+      'Unlimited video form feedback & biomechanics fixes',
+      '24/7 Priority VIP WhatsApp line with rapid response',
+      'Exclusive access to AFIT private exercise video vault',
+      'Dining out & travel nutritional guide',
     ],
     ctaText: 'Apply For Pro Elite',
   },
@@ -234,26 +485,61 @@ export const pricingTiersData: PricingTier[] = [
     name: 'VIP 1-on-1 Mentorship',
     price: '$349',
     period: '/month',
-    badge: 'EXCLUSIVE • LIMITED SLOTS',
-    description: 'High-touch executive coaching with direct 1-on-1 personal mentorship, contest prep, or intense executive lifestyle overhaul.',
+    badge: 'Exclusive • Limited Slots',
+    description: 'High-touch executive coaching with direct 1-on-1 personal mentorship, contest prep, or total lifestyle overhaul.',
     features: [
       'Everything in Pro Elite Coaching included',
-      'Direct 1-on-1 Weekly Live Video Strategy Call',
-      'Contest / Stage / Photoshoot Peak Week Protocol',
-      'Bloodwork Biomarker & Hormone Optimization Guidance',
-      'Real-Time Restaurant & Travel Meal Approvals',
-      'Direct WhatsApp Voice Note Access to Captain Ahmed',
-      'Emergency Schedule Adjustments & Priority Re-programming',
-      'Customized Cardio & Heart Rate Zone Conditioning Plan',
+      'Weekly 1-on-1 live strategy video call',
+      'Contest / Stage / Photoshoot peak week protocol',
+      'Biomarker & hormone optimization guidance from bloodwork',
+      'Real-time restaurant meal & travel approvals',
+      'Direct access to Captain Ahmed\'s WhatsApp voice notes',
+      'Emergency schedule adjustments & priority re-programming',
+      'Customized cardio & heart rate zone conditioning plan',
     ],
     ctaText: 'Apply For VIP Mentorship',
   },
 ];
 
-export const galleryData: GalleryItem[] = [
+export const pricingTiersData = pricingTiersDataAr;
+
+
+// ==================== GALLERY DATA ====================
+export const galleryDataAr: GalleryItem[] = [
   {
     id: 'gal-1',
-    title: 'Heavy Barbell Compound Protocols',
+    title: 'بروتوكولات الباربيل الثقيلة المركبة',
+    category: 'القوة والتكييف',
+    image: '/assets/images/gallery-1.jpg',
+    fallbackImage: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    id: 'gal-2',
+    title: 'الرشاقة الرياضية عالية السرعة',
+    category: 'الأداء',
+    image: '/assets/images/gallery-2.jpg',
+    fallbackImage: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    id: 'gal-3',
+    title: 'دقة الشكل الميكانيكي الحيوي',
+    category: 'تقنية التدريب',
+    image: '/assets/images/gallery-3.jpg',
+    fallbackImage: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    id: 'gal-4',
+    title: 'منشأة التدريب الخاصة النخبوية',
+    category: 'بيئة AFIT',
+    image: '/assets/images/gallery-4.jpg',
+    fallbackImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
+  },
+];
+
+export const galleryDataEn: GalleryItem[] = [
+  {
+    id: 'gal-1',
+    title: 'Heavy Compound Barbell Protocols',
     category: 'Strength & Conditioning',
     image: '/assets/images/gallery-1.jpg',
     fallbackImage: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80',
@@ -267,7 +553,7 @@ export const galleryData: GalleryItem[] = [
   },
   {
     id: 'gal-3',
-    title: 'Biomechanical Form Precision',
+    title: 'Kinematic Form Precision',
     category: 'Coaching Technique',
     image: '/assets/images/gallery-3.jpg',
     fallbackImage: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80',
@@ -275,68 +561,153 @@ export const galleryData: GalleryItem[] = [
   {
     id: 'gal-4',
     title: 'Elite Private Training Facility',
-    category: 'AFIT Environment',
+    category: 'AFIT Culture',
     image: '/assets/images/gallery-4.jpg',
     fallbackImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
   },
 ];
 
-export const testimonialsData: Testimonial[] = [
+export const galleryData = galleryDataAr;
+
+
+// ==================== TESTIMONIALS DATA ====================
+export const testimonialsDataAr: Testimonial[] = [
+  {
+    id: 'test-1',
+    name: 'طارق محمود',
+    title: 'المدير التنفيذي والرياضي',
+    rating: 5,
+    result: '-16 كجم دهون في 4 أشهر',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+    quote:
+      'الكابتن أحمد مصطفى لا يبيع ملفات PDF عامة نسخة طبق الأصل. معرفته العميقة بعلوم الرياضة والتكيف الأيضي على مستوى أولمبي. فقدت 16 كجم أثناء العمل 60 ساعة أسبوعياً دون الاحتراق أو الشعور بالجوع.',
+  },
+  {
+    id: 'test-2',
+    name: 'د. شريف الجوهري',
+    title: 'جراح عظام ومتحمس للكروس فيتنيس',
+    rating: 5,
+    result: 'إعادة تأهيل أسفل الظهر وبناء 6 كجم عضلات',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+    quote:
+      'بصفتي جراحاً، أنا مشكوك بشكل مشهور في مدربي اللياقة. التعديلات الميكانيكية للكابتن أحمد على ديدليفت وسكواتي القضت على الانضغاط القطني المزمن مع إضافة 6 كجم من الأنسجة النحيفة الصلبة في 5 أشهر.',
+  },
+  {
+    id: 'test-3',
+    name: 'عمر خشابة',
+    title: 'مؤسس تقني وملاكم هاوٍ',
+    rating: 5,
+    result: 'دهون جسم رقم واحد ومضاعفة القدرة التحملية',
+    avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=200&q=80',
+    quote:
+      'طريقة AFIT هي علم بحت. عمليات تسجيل الدخول على واتساب وتصحيحات الشكل الفورية تمسلك مساءلة صارمة. إذا كنت جاداً في تحويل جسمك وعقليتك، لا أحد أفضل في المنطقة.',
+  },
+];
+
+export const testimonialsDataEn: Testimonial[] = [
   {
     id: 'test-1',
     name: 'Tarek Mahmoud',
-    title: 'Managing Director & Athlete',
+    title: 'Corporate Executive & Athlete',
     rating: 5,
-    result: '-16 kg Fat in 4 Months',
+    result: '-16kg Fat in 4 Months',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
     quote:
-      'Captain Ahmed Mostafa does not sell generic cookie-cutter PDFs. His deep knowledge of sports science and metabolic adaptation is on an Olympic level. I lost 16kg while working 60-hour weeks without burning out or feeling starved.',
+      'Captain Ahmed Mostafa does not sell generic copy-paste PDFs. His deep sports science knowledge and metabolic adaptation are Olympic-level. I lost 16kg while working 60 hours a week without burnout or feeling starved.',
   },
   {
     id: 'test-2',
     name: 'Dr. Sherif El-Gohary',
-    title: 'Orthopedic Surgeon & Cross-Fitness Enthusiast',
+    title: 'Orthopedic Surgeon & Fitness Enthusiast',
     rating: 5,
-    result: 'Rehabbed Lower Back & Built 6kg Muscle',
+    result: 'Lower Back Rehab & +6kg Muscle Gain',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
     quote:
-      'As a surgeon, I am notoriously skeptical about fitness coaches. Captain Ahmed’s biomechanical adjustments to my deadlift and squat eliminated chronic lumbar impingement while adding 6kg of solid lean tissue in 5 months.',
+      'As a surgeon, I am notoriously skeptical of fitness trainers. Captain Ahmed\'s mechanical adjustments to my deadlift and squat eliminated chronic lumbar compression while adding 6kg of solid lean tissue in 5 months.',
   },
   {
     id: 'test-3',
     name: 'Omar Khashaba',
     title: 'Tech Founder & Amateur Boxer',
     rating: 5,
-    result: 'Single Digit Bodyfat & 2x Stamina',
+    result: 'Single Digit Body Fat & Doubled Stamina',
     avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=200&q=80',
     quote:
-      'The AFIT METHOD is pure science. The WhatsApp check-ins and instant form corrections hold you ruthlessly accountable. If you are serious about transforming your physique and mindset, there is no one better in the region.',
+      'The AFIT METHOD is pure science. The WhatsApp check-ins and instant form corrections hold you ruthlessly accountable. If you are serious about transforming your body and mindset, there is nobody better in the region.',
   },
 ];
 
-export const faqData: FaqItem[] = [
+export const testimonialsData = testimonialsDataAr;
+
+
+// ==================== FAQ DATA ====================
+export const faqDataAr: FaqItem[] = [
+  {
+    id: 'faq-1',
+    question: 'كيف يعمل التدريب عبر الإنترنت مع الكابتن أحمد مصطفى؟',
+    answer:
+      'بمجرد التسجيل، يقوم الكابتن أحمد بإجراء تدقيق شامل للتسجيل يقيّم تاريخ تدريبك، ونقاط القوة/الإصابات الميكانيكية، والجدول اليومي، والخط الأساسي الدقيق للسعرات الحرارية. ستتلقى خطة تدريب مخصصة بالكامل ومقسّمة وبروتوكول وجبات أيضي محسوب. كل أسبوع تقدم عمليات تسجيل فيديو وقياسات، وتتلقى تغذية راجعة مباشرة وتعديلات دقيقة مستمرة عبر واتساب.',
+  },
+  {
+    id: 'faq-2',
+    question: 'هل يشمل خطط التغذية الأطعمة التي أحبها، أم هو جوع شديد؟',
+    answer:
+      'حميات الجوع الشديد تؤدي إلى إبطاء الأيض، وانهيار العضلات، والشراهة الارتدادية. طريقة AFIT تستخدم تقسيم مرن للمغذيات الكبرى وتوقيت المغذيات. ستأكل أطعمة كاملة لذيذة وصحية تناسب نمط حياتك، وتفضيلاتك الثقافية، وأهداف الشبع، مما يضمن فقدان دهون مستدام دون الشعور بالمحرومية.',
+  },
+  {
+    id: 'faq-3',
+    question: 'ما المعدات أو عضوية الجيم التي أحتاجها للبدء؟',
+    answer:
+      'سواء كنت تتدرب في جيم تجاري مجهز بالكامل، أو منشأة رياضية متخصصة، أو إعداد جيم منزلي خاص بالدمبل وأشرطة المقاومة، فإن برنامجك مصمم هندسياً حول المعدات الدقيقة وقيود الوقت المتوفرة لديك.',
+  },
+  {
+    id: 'faq-4',
+    question: 'كم بسرعة يمكنني توقع رؤية نتائج ملموسة مع طريقة AFIT؟',
+    answer:
+      'معظم العملاء الملتزمين يلاحظون زيادات ملحوظة في الطاقة، والوضعية، والضخ العضلي خلال أول 10-14 يوماً. التغييرات القابلة للقياس في تكوين الجسم (تخفيض ملحوظ في الخصر، والأوعية الدموية، وكثافة العضلات) تصبح عادة مرئية بشكل لافت من الأسبوع 4 إلى الأسبوع 12 من التنفيذ المتسق.',
+  },
+];
+
+export const faqDataEn: FaqItem[] = [
   {
     id: 'faq-1',
     question: 'How does online coaching with Captain Ahmed Mostafa work?',
     answer:
-      'Once you register, Captain Ahmed performs an exhaustive onboarding audit assessing your training history, biomechanical strengths/injuries, daily schedule, and precise caloric baseline. You receive a fully custom periodized training plan and calculated metabolic meal protocol. Every week you submit video check-ins and measurements, receiving direct feedback and continuous micro-adjustments via WhatsApp.',
+      'Once enrolled, Captain Ahmed conducts a comprehensive onboarding audit assessing your training history, mechanical strengths/injuries, daily schedule, and exact baseline calories. You receive a fully personalized periodized workout plan and calculated metabolic meal protocol. Each week you submit video check-ins and measurements, receiving direct feedback and continuous micro-adjustments via WhatsApp.',
   },
   {
     id: 'faq-2',
-    question: 'Will my nutrition plan include foods I enjoy, or is it extreme starvation?',
+    question: 'Do nutrition plans include foods I like, or is it extreme starvation?',
     answer:
-      'Extreme starvation diets lead to metabolic slowdown, muscle catabolism, and rebound bingeing. The AFIT METHOD utilizes flexible macronutrient partitioning and nutrient timing. You will eat delicious, wholesome whole foods that match your lifestyle, cultural preferences, and satiety targets, ensuring sustainable fat loss without feeling deprived.',
+      'Extreme starvation diets destroy metabolism, break down muscle, and cause rebound bingeing. The AFIT METHOD uses flexible macro-tallying and nutrient timing. You will eat delicious, nutrient-dense whole foods tailored to your lifestyle, cultural preferences, and satiety targets, ensuring sustainable fat loss without feeling deprived.',
   },
   {
     id: 'faq-3',
     question: 'What equipment or gym membership do I need to start?',
     answer:
-      'Whether you train at a fully equipped commercial gym, a specialized athletic facility, or a private home gym setup with dumbbells and resistance bands, your program is custom-engineered around the exact equipment and time constraints you have available.',
+      'Whether you train in a fully equipped commercial gym, a specialized athletic facility, or a home gym set up with dumbbells and resistance bands, your program is engineered around the exact equipment and time constraints you have available.',
   },
   {
     id: 'faq-4',
-    question: 'How quickly can I expect to see tangible results with the AFIT METHOD?',
+    question: 'How fast can I expect to see tangible results with the AFIT METHOD?',
     answer:
-      'Most dedicated clients observe noticeable increases in energy, posture, and muscular pump within the first 10-14 days. Measurable body composition changes (significant waist reduction, vascularity, and muscle density) typically become strikingly visible by week 4 through week 12 of consistent execution.',
+      'Most committed clients notice significant increases in energy, posture, and muscle pumps within the first 10-14 days. Measurable body composition changes (noticeable waist reduction, vascularity, and muscle density) typically become strikingly visible from Week 4 to Week 12 of consistent execution.',
   },
 ];
+
+export const faqData = faqDataAr;
+
+
+// Custom hook to automatically return localized coach data based on current active language
+export const useCoachData = () => {
+  const { language } = useLanguage();
+
+  return {
+    certifications: language === 'ar' ? certificationsDataAr : certificationsDataEn,
+    transformations: language === 'ar' ? transformationsDataAr : transformationsDataEn,
+    pricingTiers: language === 'ar' ? pricingTiersDataAr : pricingTiersDataEn,
+    gallery: language === 'ar' ? galleryDataAr : galleryDataEn,
+    testimonials: language === 'ar' ? testimonialsDataAr : testimonialsDataEn,
+    faq: language === 'ar' ? faqDataAr : faqDataEn,
+  };
+};

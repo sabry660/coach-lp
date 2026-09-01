@@ -6,6 +6,9 @@
 import React, { useState } from 'react';
 import { defaultSettings } from './data/coachData';
 import { AppSettings, GalleryItem, Certification } from './types';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import { MusicProvider } from './contexts/MusicContext';
+import { useTranslations } from './hooks/useTranslations';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Story } from './components/Story';
@@ -19,13 +22,15 @@ import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
 import { LightboxModal } from './components/LightboxModal';
 import { CertificateModal } from './components/CertificateModal';
+import { MusicConsentModal } from './components/MusicConsentModal';
 import { MessageCircle } from 'lucide-react';
 
-export default function App() {
+function MainContent() {
   const [settings] = useState<AppSettings>(defaultSettings);
   const [activeLightboxItem, setActiveLightboxItem] = useState<GalleryItem | null>(null);
   const [activeCert, setActiveCert] = useState<Certification | null>(null);
   const [selectedTierId, setSelectedTierId] = useState<string>('pro-elite');
+  const { language } = useLanguage();
 
   const handleSelectTier = (tierId: string) => {
     setSelectedTierId(tierId);
@@ -37,16 +42,16 @@ export default function App() {
 
   const handleFloatingWhatsApp = () => {
     const cleanNumber = (settings.whatsappNumber || '201000000000').replace(/[^0-9]/g, '');
-    const defaultMsg = encodeURIComponent(
-      `Hello Captain Ahmed Mostafa! I want to inquire about starting my AFIT METHOD personal coaching program.`
-    );
+    const msgText = language === 'ar'
+      ? `مرحباً كابتن أحمد مصطفى! أود الاستفسار عن البدء في برنامج التدريب الشخصي الخاص بطريقة AFIT.`
+      : `Hello Captain Ahmed Mostafa! I want to inquire about starting my AFIT METHOD personal coaching program.`;
+    const defaultMsg = encodeURIComponent(msgText);
     window.open(`https://wa.me/${cleanNumber}?text=${defaultMsg}`, '_blank');
   };
 
   return (
-    <div className="min-h-screen bg-[#000000] text-[#FFFFFF] font-sans antialiased selection:bg-[#E30613] selection:text-white flex flex-col justify-between">
-      
-      {/* 1. Navigation Bar (Sticky with blur effect, clean English navigation) */}
+    <div className="min-h-screen bg-[#000000] text-[#FFFFFF] font-sans antialiased selection:bg-[#E30613] selection:text-white flex flex-col justify-between overflow-x-hidden w-full max-w-full">
+      {/* 1. Navigation Bar */}
       <Navbar
         settings={settings}
         onSelectTier={handleSelectTier}
@@ -56,39 +61,39 @@ export default function App() {
         {/* 2. Hero Section */}
         <Hero settings={settings} />
 
-        {/* 3. Story Section ("The Man Behind AFIT METHOD") */}
+        {/* 3. Story Section */}
         <Story />
 
-        {/* 4. Certifications & Accreditations Section (Clickable cards with popup certificate document & description) */}
+        {/* 4. Certifications Section */}
         <Certifications onSelectCert={(cert) => setActiveCert(cert)} />
 
-        {/* 5. Transformations Section (Interactive Before/After comparison sliders) */}
+        {/* 5. Transformations Section */}
         <Transformations />
 
-        {/* 6. Subscription Tiers / Pricing Section (Starter $99, Pro Elite $199, VIP 1-on-1 $349) */}
+        {/* 6. Subscription Tiers / Pricing Section */}
         <Pricing onSelectTier={handleSelectTier} />
 
-        {/* 7. Gallery Section (4-Column Grid with Lightbox) */}
+        {/* 7. Gallery Section */}
         <Gallery onOpenLightbox={(item) => setActiveLightboxItem(item)} />
 
-        {/* 8. Testimonials Section (3 Client Review Cards) */}
+        {/* 8. Testimonials Section */}
         <Testimonials />
 
-        {/* 9. FAQ Section (Interactive Accordion) */}
+        {/* 9. FAQ Section */}
         <Faq />
 
-        {/* 10. Contact / CTA Section (WhatsApp ready message & Socials) */}
+        {/* 10. Contact / CTA Section */}
         <ContactForm
           settings={settings}
           selectedTierId={selectedTierId}
         />
       </main>
 
-      {/* 11. Footer (Official copyright notice for Captain Ahmed Mostafa / AFIT METHOD) */}
+      {/* 11. Footer */}
       <Footer settings={settings} />
 
       {/* Floating WhatsApp Quick Action Button */}
-      <div className="fixed bottom-6 right-6 z-40">
+      <div className="fixed bottom-24 right-6 z-40 sm:bottom-6 hidden sm:block">
         <button
           onClick={handleFloatingWhatsApp}
           className="group flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-black font-bold py-3 px-4 sm:px-5 rounded-full shadow-[0_4px_25px_rgba(37,211,102,0.4)] transition-all duration-300 hover:scale-105"
@@ -96,7 +101,7 @@ export default function App() {
         >
           <MessageCircle className="w-6 h-6 fill-black" />
           <span className="text-xs uppercase tracking-wider font-extrabold hidden sm:inline">
-            Chat On WhatsApp
+            {language === 'ar' ? 'تحدث على واتساب' : 'Chat On WhatsApp'}
           </span>
         </button>
       </div>
@@ -113,6 +118,18 @@ export default function App() {
         onClose={() => setActiveCert(null)}
       />
 
+      {/* Music Consent Modal */}
+      <MusicConsentModal />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <MusicProvider>
+        <MainContent />
+      </MusicProvider>
+    </LanguageProvider>
   );
 }

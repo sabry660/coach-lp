@@ -1,19 +1,35 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html class="scroll-smooth overflow-x-hidden w-full max-w-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Captain Ahmed Mostafa | AFIT METHOD - Elite Training & Nutrition</title>
-    <meta name="description" content="Official elite fitness & nutrition coaching landing page for Captain Ahmed Mostafa - AFIT METHOD. Science-backed custom coaching, body transformation, and competition prep." />
-    <meta name="keywords" content="Captain Ahmed Mostafa, AFIT Method, Personal Trainer, Sports Nutrition, Elite Fitness Coach, Body Transformation, TASS UK, ACE, ASCA" />
+    <title>Captain Ahmed Mostafa | AFIT METHOD - Elite Personal Training & Sports Nutrition Coach</title>
+    <meta name="description" content="Transform your physique with Captain Ahmed Mostafa, certified elite fitness coach and sports nutritionist. Science-backed personal training, custom nutrition plans, body transformation coaching, and competition preparation. TASS UK & ACE certified with proven results." />
+    <meta name="keywords" content="Captain Ahmed Mostafa, AFIT Method, Personal Trainer Egypt, Sports Nutrition Coach, Elite Fitness Coach, Body Transformation, Online Coaching, TASS UK, ACE Certified, ASCA, Strength Training, Hypertrophy Coaching, Fat Loss, Muscle Building, Contest Prep, Athletic Performance" />
     <meta name="author" content="Captain Ahmed Mostafa" />
-    <meta property="og:title" content="Captain Ahmed Mostafa | AFIT METHOD - Elite Training & Nutrition" />
-    <meta property="og:description" content="Science-backed elite coaching, personalized workout systems, and contest-level nutrition tailored to your physique goals." />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="geo.region" content="EG" />
+    <meta name="geo.placename" content="Egypt" />
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://afitmethod.com/" />
+    <meta property="og:title" content="Captain Ahmed Mostafa | AFIT METHOD - Elite Personal Training & Sports Nutrition" />
+    <meta property="og:description" content="Science-backed elite coaching, personalized workout systems, and contest-level nutrition tailored to your physique goals. TASS UK & ACE certified with proven client transformations." />
     <meta property="og:image" content="/assets/images/youssef-hero.jpg" />
+    <meta property="og:site_name" content="AFIT METHOD" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Captain Ahmed Mostafa | AFIT METHOD" />
-    <meta name="twitter:description" content="Elite Training & Nutrition by Captain Ahmed Mostafa." />
+    <meta name="twitter:url" content="https://afitmethod.com/" />
+    <meta name="twitter:title" content="Captain Ahmed Mostafa | AFIT METHOD - Elite Training & Nutrition" />
+    <meta name="twitter:description" content="Transform your physique with science-backed coaching. Custom training programs, sports nutrition, and competition prep by certified elite coach Captain Ahmed Mostafa." />
+    <meta name="twitter:image" content="/assets/images/youssef-hero.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://afitmethod.com/" />
     <meta name="theme-color" content="#E30613" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -23,13 +39,24 @@
 
     <!-- PWA Web Manifest and Icons -->
     <link rel="manifest" href="/manifest.json" />
-    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-    <link rel="apple-touch-icon" href="/icon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="apple-touch-icon" href="/logo.svg" />
 
-    <!-- Google Fonts: Bebas Neue and Montserrat -->
+    <!-- Google Fonts: Bebas Neue, Montserrat, Cairo for Arabic -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@400;500;600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet" />
+    
+    <!-- Custom Arabic Font -->
+    <style>
+      @font-face {
+        font-family: 'Madika Arabic';
+        src: url('/alfont_com_MadikaArabicTRIAL-Regular.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
 
     <!-- Schema.org JSON-LD for Sports Coach / Fitness Trainer SEO -->
     <script type="application/ld+json">
@@ -38,18 +65,78 @@
       "@type": "SportsActivityLocation",
       "name": "AFIT METHOD by Captain Ahmed Mostafa",
       "description": "Elite Personal Training, High Performance Coaching and Clinical Sports Nutrition Methodology.",
+      "url": "https://afitmethod.com",
       "telephone": "+201000000000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "EG",
+        "addressRegion": "Egypt"
+      },
       "priceRange": "$$$",
       "founder": {
         "@type": "Person",
         "name": "Captain Ahmed Mostafa",
         "jobTitle": "Elite Strength & Conditioning Coach, Clinical Sports Nutritionist",
-        "knowsAbout": ["Body Composition", "Strength Training", "Sports Nutrition", "Contest Prep", "Athletic Performance"]
+        "knowsAbout": ["Body Composition", "Strength Training", "Sports Nutrition", "Contest Prep", "Athletic Performance", "Hypertrophy Training", "Fat Loss Coaching", "Biomechanics", "Periodization"],
+        "alumniOf": ["London International University", "American Council on Exercise", "Australian Strength and Conditioning Association"]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Personal Training Programs",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Starter Tier Coaching",
+              "description": "Essential structured foundation with personalized workout split and custom nutrition blueprint"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pro Elite Coaching",
+              "description": "Flagship transformation system with weekly adaptive changes and rapid body recomposition"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "VIP 1-on-1 Mentorship",
+              "description": "High-touch executive coaching with direct personal mentorship and contest prep"
+            }
+          }
+        ]
       }
     }
     </script>
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AFIT METHOD",
+      "url": "https://afitmethod.com",
+      "logo": "https://afitmethod.com/logo.svg",
+      "description": "Elite athletic conditioning, body recomposition, and sports nutrition methodology led by Captain Ahmed Mostafa.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+201000000000",
+        "contactType": "customer service",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://instagram.com/ahmedmostafa_afit",
+        "https://facebook.com/CaptainAhmedMostafaFitness",
+        "https://tiktok.com/@captain_ahmed_mostafa"
+      ]
+    }
+    </script>
   </head>
-  <body class="bg-[#000000] text-[#FFFFFF] font-sans antialiased selection:bg-[#E30613] selection:text-white">
+  <body class="bg-[#000000] text-[#FFFFFF] antialiased selection:bg-[#E30613] selection:text-white overflow-x-hidden w-full max-w-full" style="font-family: 'Montserrat', sans-serif;">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

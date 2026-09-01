@@ -1,12 +1,16 @@
 import React from 'react';
-import { testimonialsData } from '../data/coachData';
+import { useCoachData } from '../data/coachData';
 import { Star, Quote, MessageSquareHeart, CheckCircle2 } from 'lucide-react';
+import { useTranslations } from '../hooks/useTranslations';
 
 export const Testimonials: React.FC = () => {
+  const t = useTranslations();
+  const { testimonials } = useCoachData();
+
   return (
-    <section id="testimonials" className="py-24 bg-[#000000] relative border-t border-[#2B2B2B]">
+    <section id="testimonials" className="py-24 bg-[#000000] relative overflow-hidden border-t border-[#2B2B2B] w-full max-w-full">
       {/* Background Accent */}
-      <div className="absolute left-1/3 top-1/2 -translate-y-1/2 w-80 h-80 bg-[#E30613]/5 blur-[130px] pointer-events-none" />
+      <div className="absolute left-1/2 sm:left-1/3 top-1/2 -translate-x-1/2 sm:translate-x-0 -translate-y-1/2 w-72 sm:w-80 h-72 sm:h-80 bg-[#E30613]/5 blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -14,19 +18,17 @@ export const Testimonials: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#1A1A1A] border border-[#2B2B2B] text-xs font-bold uppercase tracking-widest text-[#E30613]">
             <MessageSquareHeart className="w-3.5 h-3.5" />
-            Client Success & Words
+            {t.testimonials.badge}
           </div>
-          <h2 className="font-heading text-4xl sm:text-6xl text-white tracking-wider">
-            WHAT CLIENTS <span className="text-[#E30613]">SAY ABOUT CAPTAIN AHMED</span>
-          </h2>
+          <h2 className="font-heading text-4xl sm:text-6xl text-white tracking-wider" dangerouslySetInnerHTML={{ __html: t.testimonials.headline }} />
           <p className="font-body text-gray-400 text-sm sm:text-base">
-            From medical surgeons to busy corporate executives, discover how the AFIT METHOD changes lives permanently.
+            {t.testimonials.description}
           </p>
         </div>
 
         {/* 3 Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonialsData.map((review) => (
+          {testimonials.map((review) => (
             <div
               key={review.id}
               className="p-8 rounded-xl bg-[#111111] border border-[#2B2B2B] card-luxury-hover flex flex-col justify-between relative group"

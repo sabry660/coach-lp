@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Flame, ArrowRight, Trophy, Award, CheckCircle2, ChevronRight } from 'lucide-react';
 import { AppSettings } from '../types';
+import { useTranslations } from '../hooks/useTranslations';
 
 interface HeroProps {
   settings: AppSettings;
@@ -8,16 +9,17 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ settings }) => {
   const [imgError, setImgError] = useState(false);
+  const t = useTranslations();
   const heroImage = '/assets/images/youssef-hero.jpg';
   const fallbackHero = 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=85';
 
   return (
     <section
       id="hero"
-      className="relative min-h-[92vh] pt-28 pb-16 lg:pt-36 lg:pb-24 flex items-center bg-[#000000] overflow-hidden"
+      className="relative min-h-[92vh] pt-28 pb-16 lg:pt-36 lg:pb-24 flex items-center bg-transparent overflow-hidden w-full max-w-full"
     >
       {/* Background Radial Glow & Grid pattern */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#E30613]/10 blur-[130px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[700px] h-[500px] bg-[#E30613]/10 blur-[130px] rounded-full pointer-events-none -z-10" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#111111_1px,transparent_1px),linear-gradient(to_bottom,#111111_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
@@ -30,29 +32,21 @@ export const Hero: React.FC<HeroProps> = ({ settings }) => {
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#1A1A1A] border border-red-500/20 shadow-inner">
               <span className="w-2 h-2 rounded-full bg-[#E30613] animate-ping" />
               <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-gray-200">
-                CAPTAIN AHMED MOSTAFA • AFIT METHOD FOUNDER
+                {t.hero.badge}
               </span>
             </div>
 
             {/* High-Impact Headline */}
             <div className="space-y-1">
-              <h1 className="font-heading text-5xl sm:text-7xl xl:text-8xl font-normal leading-[0.9] text-white tracking-wider">
-                ELITE TRAINING <br />
-                <span className="text-[#E30613] drop-shadow-[0_0_25px_rgba(227,6,19,0.4)]">
-                  & NUTRITION
-                </span>
-              </h1>
+              <h1 className="font-heading text-5xl sm:text-7xl xl:text-8xl font-normal leading-[0.9] text-white tracking-wider" dangerouslySetInnerHTML={{ __html: t.hero.headline }} />
               <p className="font-heading text-xl sm:text-2xl text-gray-400 tracking-widest uppercase pt-1">
-                The Science of Athletic Dominance • AFIT METHOD
+                {t.hero.subheadline}
               </p>
             </div>
 
             {/* Compelling Subheadline */}
             <p className="font-body text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed">
-              Stop wasting years on generic fitness plans. Master Trainer{' '}
-              <strong className="text-white font-semibold">Captain Ahmed Mostafa</strong>{' '}
-              delivers bespoke periodized training, surgical sports nutrition, and ruthless accountability 
-              engineered to build an unbreakable, high-performance physique.
+              {t.hero.description}
             </p>
 
             {/* Two Primary CTA Buttons */}
@@ -61,7 +55,7 @@ export const Hero: React.FC<HeroProps> = ({ settings }) => {
                 href="#contact"
                 className="inline-flex items-center justify-center gap-3 bg-[#E30613] hover:bg-[#C00510] text-white font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-sm shadow-xl glow-red transition-all duration-200 hover:-translate-y-0.5"
               >
-                <span>Start Your Transformation</span>
+                <span>{t.hero.startTransformation}</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -69,7 +63,7 @@ export const Hero: React.FC<HeroProps> = ({ settings }) => {
                 href="#pricing"
                 className="inline-flex items-center justify-center gap-2 bg-[#1A1A1A] hover:bg-[#2B2B2B] text-white border border-[#2B2B2B] hover:border-gray-500 font-semibold uppercase tracking-wider text-sm px-7 py-4 rounded-sm transition-all duration-200"
               >
-                <span>Explore Coaching Tiers</span>
+                <span>{t.hero.exploreTiers}</span>
                 <ChevronRight className="w-4 h-4 text-gray-400" />
               </a>
             </div>
@@ -79,8 +73,8 @@ export const Hero: React.FC<HeroProps> = ({ settings }) => {
               <div className="flex items-center gap-2.5">
                 <Trophy className="w-5 h-5 text-[#E30613] shrink-0" />
                 <div>
-                  <div className="font-heading text-2xl text-white tracking-wide">10+ YEARS</div>
-                  <div className="text-[11px] text-gray-400 uppercase font-medium">Coaching Mastery</div>
+                  <div className="font-heading text-2xl text-white tracking-wide">10+ {t.hero.yearsExp}</div>
+                  <div className="text-[11px] text-gray-400 uppercase font-medium">{t.hero.coachingMastery}</div>
                 </div>
               </div>
 
@@ -88,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({ settings }) => {
                 <Flame className="w-5 h-5 text-[#E30613] shrink-0" />
                 <div>
                   <div className="font-heading text-2xl text-white tracking-wide">500+</div>
-                  <div className="text-[11px] text-gray-400 uppercase font-medium">Physiques Rebuilt</div>
+                  <div className="text-[11px] text-gray-400 uppercase font-medium">{t.hero.physiquesRebuilt}</div>
                 </div>
               </div>
 
@@ -96,7 +90,7 @@ export const Hero: React.FC<HeroProps> = ({ settings }) => {
                 <Award className="w-5 h-5 text-[#E30613] shrink-0" />
                 <div>
                   <div className="font-heading text-2xl text-white tracking-wide">TASS & ACE</div>
-                  <div className="text-[11px] text-gray-400 uppercase font-medium">UK / US Accredited</div>
+                  <div className="text-[11px] text-gray-400 uppercase font-medium">{t.hero.ukUsAccredited}</div>
                 </div>
               </div>
             </div>
@@ -133,13 +127,13 @@ export const Hero: React.FC<HeroProps> = ({ settings }) => {
                       AM
                     </div>
                     <div>
-                      <div className="font-heading text-lg text-white tracking-wide">CAPTAIN AHMED MOSTAFA</div>
-                      <div className="text-[11px] text-gray-400">Head Coach & Performance Nutritionist</div>
+                      <div className="font-heading text-lg text-white tracking-wide">{settings.coachName}</div>
+                      <div className="text-[11px] text-gray-400">{t.hero.headCoach}</div>
                     </div>
                   </div>
                   <div className="text-right">
                     <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">
-                      <CheckCircle2 className="w-3 h-3" /> Certified
+                      <CheckCircle2 className="w-3 h-3" /> {t.hero.certified}
                     </span>
                   </div>
                 </div>

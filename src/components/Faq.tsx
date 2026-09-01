@@ -1,36 +1,37 @@
 import React, { useState } from 'react';
-import { faqData } from '../data/coachData';
+import { useCoachData } from '../data/coachData';
 import { HelpCircle, ChevronDown, MessageSquareQuote } from 'lucide-react';
+import { useTranslations } from '../hooks/useTranslations';
 
 export const Faq: React.FC = () => {
   // Allow toggling open item, default first item open
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const t = useTranslations();
+  const { faq: faqs } = useCoachData();
 
   const toggleItem = (index: number) => {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
 
   return (
-    <section id="faq" className="py-24 bg-[#0A0A0A] relative border-t border-[#2B2B2B]">
+    <section id="faq" className="py-24 bg-[#0A0A0A] relative overflow-hidden border-t border-[#2B2B2B] w-full max-w-full">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#1A1A1A] border border-[#2B2B2B] text-xs font-bold uppercase tracking-widest text-[#E30613]">
             <HelpCircle className="w-3.5 h-3.5" />
-            Clear Answers
+            {t.faq.badge}
           </div>
-          <h2 className="font-heading text-4xl sm:text-6xl text-white tracking-wider">
-            FREQUENTLY ASKED <span className="text-[#E30613]">QUESTIONS</span>
-          </h2>
+          <h2 className="font-heading text-4xl sm:text-6xl text-white tracking-wider" dangerouslySetInnerHTML={{ __html: t.faq.headline }} />
           <p className="font-body text-gray-400 text-sm sm:text-base">
-            Everything you need to know about the AFIT METHOD onboarding, nutrition flexibility, and coaching workflow.
+            {t.faq.description}
           </p>
         </div>
 
         {/* Interactive Accordion */}
         <div className="space-y-4">
-          {faqData.map((faq, index) => {
+          {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (
@@ -75,9 +76,9 @@ export const Faq: React.FC = () => {
         {/* Still have questions prompt */}
         <div className="mt-10 text-center p-5 rounded bg-[#111111] border border-[#2B2B2B]">
           <p className="text-xs sm:text-sm text-gray-300">
-            Have a custom medical question or specific athletic inquiry?{' '}
+            {t.faq.customQuestion}{' '}
             <a href="#contact" className="text-[#E30613] font-bold hover:underline ml-1">
-              Ask Captain Ahmed directly on WhatsApp →
+              {t.faq.askDirectly}
             </a>
           </p>
         </div>

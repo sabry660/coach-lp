@@ -1,6 +1,8 @@
 import React from 'react';
 import { AppSettings } from '../types';
 import { ArrowUp, Instagram, Facebook, Mail, ShieldAlert } from 'lucide-react';
+import { useTranslations } from '../hooks/useTranslations';
+import { useLanguage } from '../contexts/LanguageContext';
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -15,6 +17,8 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ settings }) => {
+  const t = useTranslations();
+  const { language } = useLanguage();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -22,7 +26,7 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#050505] text-white border-t border-[#2B2B2B] relative">
+    <footer className="bg-[#050505] text-white border-t border-[#2B2B2B] relative overflow-hidden w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-900">
@@ -30,12 +34,14 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
           {/* Brand Col */}
           <div className="space-y-4">
             <a href="#hero" className="inline-block group" aria-label="AFIT Home">
-              <div className="w-11 h-11 rounded-sm bg-[#E30613] flex items-center justify-center font-heading text-3xl font-bold text-white tracking-wider shadow-lg shadow-[#E30613]/30 transition-transform group-hover:scale-105 border border-white/10">
-                A
-              </div>
+              <img 
+                src="/logo.svg" 
+                alt="AFIT METHOD Logo" 
+                className="h-11 w-auto transition-transform duration-300 group-hover:scale-105"
+              />
             </a>
             <p className="text-xs text-gray-400 font-body leading-relaxed">
-              Elite athletic conditioning, body recomposition, and sports nutrition methodology led by Captain Ahmed Mostafa.
+              {t.footer.description}
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a
@@ -78,26 +84,26 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
           {/* Quick Links */}
           <div className="space-y-3">
             <h4 className="font-heading text-lg text-white tracking-wider">
-              QUICK NAVIGATION
+              {t.footer.quickNav}
             </h4>
             <ul className="space-y-2 text-xs text-gray-400 font-body">
               <li>
-                <a href="#story" className="hover:text-[#E30613] transition-colors">About Captain Ahmed</a>
+                <a href="#story" className="hover:text-[#E30613] transition-colors">{t.footer.aboutCaptain}</a>
               </li>
               <li>
-                <a href="#certifications" className="hover:text-[#E30613] transition-colors">Verified Accreditations</a>
+                <a href="#certifications" className="hover:text-[#E30613] transition-colors">{t.footer.verifiedAccreditations}</a>
               </li>
               <li>
-                <a href="#transformations" className="hover:text-[#E30613] transition-colors">Client Transformations</a>
+                <a href="#transformations" className="hover:text-[#E30613] transition-colors">{t.footer.clientTransformations}</a>
               </li>
               <li>
-                <a href="#pricing" className="hover:text-[#E30613] transition-colors">Coaching Tiers & Rates</a>
+                <a href="#pricing" className="hover:text-[#E30613] transition-colors">{t.footer.coachingTiers}</a>
               </li>
               <li>
-                <a href="#gallery" className="hover:text-[#E30613] transition-colors">Facility & Technique</a>
+                <a href="#gallery" className="hover:text-[#E30613] transition-colors">{t.footer.facilityTechnique}</a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-[#E30613] transition-colors">Frequently Asked Questions</a>
+                <a href="#faq" className="hover:text-[#E30613] transition-colors">{t.footer.frequentlyAsked}</a>
               </li>
             </ul>
           </div>
@@ -105,28 +111,28 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
           {/* International Credentials */}
           <div className="space-y-3">
             <h4 className="font-heading text-lg text-white tracking-wider">
-              ACCREDITATIONS
+              {t.footer.accreditations}
             </h4>
             <div className="space-y-2 text-xs text-gray-400 font-body">
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E30613]" />
-                <span>TASS (Talented Athlete Scheme, UK)</span>
+                <span>{language === 'ar' ? 'TASS (خطة منحة الرياضيين الموهوبين، المملكة المتحدة)' : 'TASS (Talented Athlete Scheme, UK)'}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E30613]" />
-                <span>ACE Certified Personal Trainer (USA)</span>
+                <span>{language === 'ar' ? 'ACE مدرب شخصي معتمد (الولايات المتحدة)' : 'ACE Certified Personal Trainer (USA)'}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E30613]" />
-                <span>IFFC Master Fitness Coach</span>
+                <span>{language === 'ar' ? 'IFFC مدرب لياقة رئيسي' : 'IFFC Master Fitness Coach'}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E30613]" />
-                <span>London International University Diploma</span>
+                <span>{language === 'ar' ? 'دبلوم جامعة لندن الدولية' : 'London International University Diploma'}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E30613]" />
-                <span>ASCA Level 2 Strength & Conditioning</span>
+                <span>{language === 'ar' ? 'ASCA المستوى 2 للقوة والتكييف' : 'ASCA Level 2 Strength & Conditioning'}</span>
               </div>
             </div>
           </div>
@@ -134,16 +140,16 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
           {/* Direct WhatsApp Contact CTA */}
           <div className="space-y-3">
             <h4 className="font-heading text-lg text-white tracking-wider">
-              ONLINE CONSULTATION
+              {t.footer.onlineConsultation}
             </h4>
             <p className="text-xs text-gray-400 leading-relaxed font-body">
-              Start your customized AFIT program directly on WhatsApp with Captain Ahmed Mostafa.
+              {t.footer.consultationDesc}
             </p>
             <a
               href="#contact"
               className="inline-block w-full py-2.5 px-4 rounded bg-[#E30613] hover:bg-[#C00510] text-white text-xs font-bold uppercase tracking-wider text-center transition-colors"
             >
-              Get In Touch
+              {t.footer.getInTouch}
             </a>
           </div>
 
@@ -152,17 +158,17 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
         {/* Bottom Bar & Medical Disclaimer */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400 font-body">
           <div>
-            © {currentYear} Captain Ahmed Mostafa • AFIT METHOD. All rights reserved.
+            © {currentYear} {t.footer.copyright}
           </div>
 
           <div className="flex items-center gap-6">
-            <span>Evidence-Based Fitness & Sports Nutrition</span>
+            <span>{t.footer.evidenceBased}</span>
             <button
               onClick={scrollToTop}
               className="p-2 rounded bg-[#1A1A1A] hover:bg-[#2B2B2B] text-gray-300 hover:text-white transition-colors flex items-center gap-1 text-xs"
               aria-label="Scroll to top"
             >
-              <span>Top</span>
+              <span>{t.footer.top}</span>
               <ArrowUp className="w-3.5 h-3.5" />
             </button>
           </div>
@@ -172,7 +178,7 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
         <div className="mt-6 pt-4 border-t border-gray-900/60 text-[11px] text-gray-400 text-center flex items-center justify-center gap-2">
           <ShieldAlert className="w-3.5 h-3.5 text-gray-400 shrink-0" />
           <span>
-            Disclaimer: Fitness and dietary protocols should be executed with proper technique and medical clearance. Results vary individually.
+            {t.footer.disclaimer}
           </span>
         </div>
 
