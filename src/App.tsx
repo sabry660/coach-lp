@@ -29,7 +29,7 @@ function MainContent() {
   const [settings] = useState<AppSettings>(defaultSettings);
   const [activeLightboxItem, setActiveLightboxItem] = useState<GalleryItem | null>(null);
   const [activeCert, setActiveCert] = useState<Certification | null>(null);
-  const [selectedTierId, setSelectedTierId] = useState<string>('pro-elite');
+  const [selectedTierId, setSelectedTierId] = useState<string>('afit-performance');
   const { language } = useLanguage();
 
   const handleSelectTier = (tierId: string) => {
@@ -43,8 +43,8 @@ function MainContent() {
   const handleFloatingWhatsApp = () => {
     const cleanNumber = (settings.whatsappNumber || '201000000000').replace(/[^0-9]/g, '');
     const msgText = language === 'ar'
-      ? `مرحباً كابتن أحمد مصطفى! أود الاستفسار عن البدء في برنامج التدريب الشخصي الخاص بطريقة AFIT.`
-      : `Hello Captain Ahmed Mostafa! I want to inquire about starting my AFIT METHOD personal coaching program.`;
+      ? `مرحباً كابتن أحمد الصياد! أود الاستفسار عن البدء في برنامج التدريب الشخصي الخاص بطريقة AFIT.`
+      : `Hello Captain Ahmed El Saiad! I want to inquire about starting my AFIT METHOD personal coaching program.`;
     const defaultMsg = encodeURIComponent(msgText);
     window.open(`https://wa.me/${cleanNumber}?text=${defaultMsg}`, '_blank');
   };
@@ -97,7 +97,7 @@ function MainContent() {
         <button
           onClick={handleFloatingWhatsApp}
           className="group flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-black font-bold py-3 px-4 sm:px-5 rounded-full shadow-[0_4px_25px_rgba(37,211,102,0.4)] transition-all duration-300 hover:scale-105"
-          aria-label="Chat with Captain Ahmed on WhatsApp"
+          aria-label="Chat with Captain Ahmed El Saiad on WhatsApp"
         >
           <MessageCircle className="w-6 h-6 fill-black" />
           <span className="text-xs uppercase tracking-wider font-extrabold hidden sm:inline">

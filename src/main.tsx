@@ -12,6 +12,9 @@ if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
   });
 }
 
+// Performance optimization: Use requestIdleCallback for non-critical operations
+const requestIdleCallback = window.requestIdleCallback || ((cb: () => void) => setTimeout(cb, 1));
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />

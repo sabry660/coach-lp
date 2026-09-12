@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Target, Activity, Zap, CheckSquare, Dumbbell, Award } from 'lucide-react';
 import { useTranslations } from '../hooks/useTranslations';
 
 export const Story: React.FC = () => {
   const [imgError, setImgError] = useState(false);
-  const storyImage = '/assets/images/youssef-story.jpg';
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const storyImage = '/about.jpeg';
   const fallbackStory = 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1000&q=80';
   const t = useTranslations();
+
+  // Preload story image
+  useEffect(() => {
+    const img = new Image();
+    img.src = storyImage;
+    img.onload = () => setImgLoaded(true);
+    img.onerror = () => {
+      setImgError(true);
+      setImgLoaded(true);
+    };
+  }, [storyImage]);
 
   const pillars = [
     {
@@ -50,11 +62,16 @@ export const Story: React.FC = () => {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-lg overflow-hidden border border-[#2B2B2B] bg-[#121212] shadow-2xl group">
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#181818]">
+                {!imgLoaded && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-[#181818]">
+                    <div className="w-8 h-8 border-2 border-[#E30613] border-t-transparent rounded-full animate-spin" />
+                  </div>
+                )}
                 <img
                   src={imgError ? fallbackStory : storyImage}
                   onError={() => setImgError(true)}
-                  alt="Captain Ahmed Mostafa Coaching"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  alt="Captain Ahmed El Saiad Coaching"
+                  className={`w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 ${!imgLoaded ? 'opacity-0' : 'opacity-100'}`}
                   loading="lazy"
                   referrerPolicy="no-referrer"
                 />
@@ -62,10 +79,7 @@ export const Story: React.FC = () => {
                 {/* Vignette Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
                 
-                {/* Placeholder path tag */}
-                <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded text-[10px] uppercase font-mono tracking-wider text-gray-300">
-                  assets/images/youssef-story.jpg
-                </div>
+
 
                 {/* Badge Overlay */}
                 <div className="absolute bottom-4 left-4 right-4 bg-[#121212]/95 border border-white/10 p-4 rounded backdrop-blur-md">

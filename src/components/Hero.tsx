@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Flame, ArrowRight, Trophy, Award, CheckCircle2, ChevronRight } from 'lucide-react';
 import { AppSettings } from '../types';
 import { useTranslations } from '../hooks/useTranslations';
@@ -9,9 +9,21 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ settings }) => {
   const [imgError, setImgError] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
   const t = useTranslations();
-  const heroImage = '/assets/images/youssef-hero.jpg';
+  const heroImage = '/hero.jpeg';
   const fallbackHero = 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=85';
+
+  // Preload hero image
+  useEffect(() => {
+    const img = new Image();
+    img.src = heroImage;
+    img.onload = () => setImgLoaded(true);
+    img.onerror = () => {
+      setImgError(true);
+      setImgLoaded(true);
+    };
+  }, [heroImage]);
 
   return (
     <section
@@ -107,11 +119,16 @@ export const Hero: React.FC<HeroProps> = ({ settings }) => {
               
               {/* Main Coach Image with Error Fallback */}
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#181818]">
+                {!imgLoaded && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-[#181818]">
+                    <div className="w-8 h-8 border-2 border-[#E30613] border-t-transparent rounded-full animate-spin" />
+                  </div>
+                )}
                 <img
                   src={imgError ? fallbackHero : heroImage}
                   onError={() => setImgError(true)}
-                  alt="Captain Ahmed Mostafa - AFIT METHOD Elite Coach"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  alt="Captain Ahmed El Saiad - AFIT METHOD Elite Coach"
+                  className={`w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 ${!imgLoaded ? 'opacity-0' : 'opacity-100'}`}
                   loading="eager"
                   referrerPolicy="no-referrer"
                 />
@@ -124,7 +141,7 @@ export const Hero: React.FC<HeroProps> = ({ settings }) => {
                 <div className="absolute bottom-4 left-4 right-4 bg-[#0A0A0A]/90 backdrop-blur-md border border-white/10 p-3.5 rounded flex items-center justify-between shadow-2xl">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded bg-[#E30613]/20 border border-[#E30613] flex items-center justify-center font-heading text-xl text-[#E30613]">
-                      AM
+                      AS
                     </div>
                     <div>
                       <div className="font-heading text-lg text-white tracking-wide">{settings.coachName}</div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useCoachData } from '../data/coachData';
 import { Check, Zap, Crown, ArrowRight, Shield } from 'lucide-react';
 import { useTranslations } from '../hooks/useTranslations';
@@ -10,6 +10,9 @@ interface PricingProps {
 export const Pricing: React.FC<PricingProps> = ({ onSelectTier }) => {
   const t = useTranslations();
   const { pricingTiers } = useCoachData();
+
+  // Memoize pricing tiers to prevent unnecessary re-renders
+  const pricingItems = useMemo(() => pricingTiers, [pricingTiers]);
 
   return (
     <section id="pricing" className="py-24 bg-[#000000] relative overflow-hidden border-t border-[#2B2B2B] w-full max-w-full">
@@ -32,7 +35,7 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectTier }) => {
 
         {/* 3 Pricing Boxes Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-          {pricingTiers.map((tier) => {
+          {pricingItems.map((tier) => {
             const isPopular = tier.highlighted;
 
             return (

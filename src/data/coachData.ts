@@ -3,12 +3,12 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 export const defaultSettings: AppSettings = {
   whatsappNumber: '201000000000', // Default international format (Egypt +20)
-  coachName: 'الكابتن أحمد مصطفى',
+  coachName: 'الكابتن أحمد الصياد',
   coachTitle: 'أخصائي اللياقة النخبوية والتغذية الرياضية السريرية',
-  email: 'coach.ahmedmostafa@afitmethod.com',
-  instagramUrl: 'https://instagram.com/ahmedmostafa_afit',
-  facebookUrl: 'https://facebook.com/CaptainAhmedMostafaFitness',
-  tiktokUrl: 'https://tiktok.com/@captain_ahmed_mostafa',
+  email: 'coach.ahmedelsaiad@afitmethod.com',
+  instagramUrl: 'https://instagram.com/ahmedelsaiad_afit',
+  facebookUrl: 'https://facebook.com/CaptainAhmedElSaiadFitness',
+  tiktokUrl: 'https://tiktok.com/@captain_ahmed_elsaiad',
 };
 
 // ==================== CERTIFICATIONS DATA ====================
@@ -269,8 +269,8 @@ export const transformationsDataAr: Transformation[] = [
     age: 29,
     weightChange: '-14 كجم دهون',
     bodyFatChange: '26% → 11%',
-    beforeImage: '/bofore,after/1/before1.jpeg',
-    afterImage: '/bofore,after/1/after 1.jpeg',
+    beforeImage: '/bofore,after/1.jpeg',
+    afterImage: '/bofore,after/1.jpeg',
     fallbackBeforeImage: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80',
     fallbackAfterImage: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80',
     description: 'مدير مؤسسي يتغلب على الركود الأيضي. حقق تعريف بطني عميق، زيادة 80 كجم في الضغط على البنش، ومضاعفة الحيوية الطاقية.',
@@ -288,8 +288,8 @@ export const transformationsDataAr: Transformation[] = [
     age: 34,
     weightChange: '-18.5 كجم',
     bodyFatChange: '31% → 13%',
-    beforeImage: '/bofore,after/2/before2.jpeg',
-    afterImage: '/bofore,after/2/after2.jpeg',
+    beforeImage: '/bofore,after/2.jpeg',
+    afterImage: '/bofore,after/2.jpeg',
     fallbackBeforeImage: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=800&q=80',
     fallbackAfterImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
     description: 'تحويل وضعية الجلوس الخاملة إلى تكييف رياضي. تصحيح وضعية كاملة، حل آلام أسفل الظهر، وذروة الأوعية الدموية.',
@@ -307,8 +307,8 @@ export const transformationsDataAr: Transformation[] = [
     age: 26,
     weightChange: '+7.5 كجم عضلات نحيفة',
     bodyFatChange: '14% → 8.5%',
-    beforeImage: '/bofore,after/3/before3.jpeg',
-    afterImage: '/bofore,after/3/after3.jpeg',
+    beforeImage: '/bofore,after/3.jpeg',
+    afterImage: '/bofore,after/3.jpeg',
     fallbackBeforeImage: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80',
     fallbackAfterImage: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80',
     description: 'تكييف تحضير المسرح واللياقة البدنية. بروتوكولات الحمل الزائد التدريجي الثقيل مدمجة مع دورة كربوهيدرات جراحية وتركيز ثلاثي الأبعاد على الدلت.',
@@ -329,8 +329,8 @@ export const transformationsDataEn: Transformation[] = [
     age: 29,
     weightChange: '-14kg Fat',
     bodyFatChange: '26% → 11%',
-    beforeImage: '/bofore,after/1/before1.jpeg',
-    afterImage: '/bofore,after/1/after 1.jpeg',
+    beforeImage: '/bofore,after/1.jpeg',
+    afterImage: '/bofore,after/1.jpeg',
     fallbackBeforeImage: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80',
     fallbackAfterImage: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80',
     description: 'Corporate executive overcoming metabolic stagnation. Achieved deep abdominal definition, +80kg bench press increase, and doubled daily energy.',
@@ -348,8 +348,8 @@ export const transformationsDataEn: Transformation[] = [
     age: 34,
     weightChange: '-18.5kg Body Mass',
     bodyFatChange: '31% → 13%',
-    beforeImage: '/bofore,after/2/before2.jpeg',
-    afterImage: '/bofore,after/2/after2.jpeg',
+    beforeImage: '/bofore,after/2.jpeg',
+    afterImage: '/bofore,after/2.jpeg',
     fallbackBeforeImage: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=800&q=80',
     fallbackAfterImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
     description: 'Transformed sedentary desk posture to athletic conditioning. Complete posture correction, resolved lower back pain, and peak vascularity.',
@@ -367,8 +367,8 @@ export const transformationsDataEn: Transformation[] = [
     age: 26,
     weightChange: '+7.5kg Lean Muscle',
     bodyFatChange: '14% → 8.5%',
-    beforeImage: '/bofore,after/3/before3.jpeg',
-    afterImage: '/bofore,after/3/after3.jpeg',
+    beforeImage: '/bofore,after/3.jpeg',
+    afterImage: '/bofore,after/3.jpeg',
     fallbackBeforeImage: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80',
     fallbackAfterImage: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80',
     description: 'Stage prep & physique conditioning. Heavy progressive overload protocols combined with surgical carb cycling and 3D delt focus.',
@@ -387,117 +387,117 @@ export const transformationsData = transformationsDataAr;
 // ==================== PRICING TIERS DATA ====================
 export const pricingTiersDataAr: PricingTier[] = [
   {
-    id: 'starter',
-    name: 'المستوى المبتدئ',
+    id: 'afit-performance',
+    name: 'AFit Performance',
     price: '$99',
     period: '/شهر',
-    description: 'الأساس الهيكلي الأساسي للأفراد المنضبطين الذين يحتاجون إلى اتجاه واضح وتغذية محسوبة.',
+    description: 'باقة مخصصة للشباب هدفنا نحسن صحة، شكل جسم، كفاءة حركة، إنتاجية وقوة.',
     features: [
       'تقسيم تمرين مخصص (الجيم أو المنزل)',
       'مخطط المغذيات الكبرى والسعرات الحرارية المخصص',
       'استراتيجية وتوقيت مكملات التغذية',
       'تدقيق التقدم وتكوين الجسم كل أسبوعين',
       'تحليل شكل التمرين وتنفيذ الفيديو',
-      'دعم تدريب واتساب المباشر (استجابة < 12 ساعة)',
+      'المتابعة بنفسي مباشرة',
+      'تصحيح انحرافات القوام بتمارين تصحيحية',
     ],
-    ctaText: 'اختر المستوى المبتدئ',
+    ctaText: 'اختر AFit Performance',
   },
   {
-    id: 'pro-elite',
-    name: 'التدريب النخبوي الاحترافي',
-    price: '$199',
+    id: 'afit-her',
+    name: 'AFit Her',
+    price: '$99',
     period: '/شهر',
     highlighted: true,
     badge: 'الأكثر شعبية',
-    description: 'نظام التحويل الرائد النهائي لـ AFIT. دقة لا تتنازل، تغييرات تكيفية أسبوعية، وإعادة تكوين سريعة للجسم.',
+    description: 'باقة مخصصة للبنات lifestyle شبه الباقة الأولى والمتابعة بتكون عن طريق فرد من الفريق.',
     features: [
-      'برنامج كامل للقوة والتضخم مقسماً',
-      'دورة ديناميكية أسبوعية للكربوهيدرات والسعرات الحرارية',
-      'تدقيق يومي للتغذية الراجعة وتحسين النوم',
-      'فحص فيديو شامل أسبوعي واستراتيجية',
-      'تغذية غير محدودة لشكل الفيديو وإصلاحات ميكانيكية',
-      'خط واتساب VIP أولوية 24/7 مع استجابة سريعة',
-      'وصول حصري إلى خزنة فيديو التمارين الخاصة بـ AFIT',
-      'دليل غذائي للأكل خارج المنزل والسفر',
+      'تقسيم تمرين مخصص (الجيم أو المنزل)',
+      'مخطط المغذيات الكبرى والسعرات الحرارية المخصص',
+      'استراتيجية وتوقيت مكملات التغذية',
+      'تدقيق التقدم وتكوين الجسم كل أسبوعين',
+      'تحليل شكل التمرين وتنفيذ الفيديو',
+      'المتابعة عن طريق فرد من الفريق',
+      'تصحيح انحرافات القوام بتمارين تصحيحية',
     ],
-    ctaText: 'قدم للتدريب النخبوي الاحترافي',
+    ctaText: 'اختر AFit Her',
   },
   {
-    id: 'vip-1on1',
-    name: 'الإرشاد الشخصي VIP 1-على-1',
-    price: '$349',
+    id: 'afit-strength',
+    name: 'AFit Strength',
+    price: '$199',
     period: '/شهر',
-    badge: 'حصري • مقاعد محدودة',
-    description: 'تدريب تنفيذي عالي التفاعل مع إرشاد شخصي مباشر 1-على-1، تحضير المسابقات، أو إعادة تقييم شاملة لنمط الحياة التنفيذي المكثف.',
+    badge: 'باقة باورليفتينج',
+    description: 'باقة باورليفتينج هدفنا نحقق أرقام أعلى في السكوات والبنش والديدليفت مع تحقيق الأهداف الأخرى.',
     features: [
-      'كل شيء في التدريب النخبوي الاحترافي مشمول',
-      'مكالمة فيديو استراتيجية مباشرة أسبوعية 1-على-1',
-      'بروتوكول أسبوع الذروة للمسابقات / المسرح / التصوير',
-      'إرشاد تحسين المؤشرات الحيوية والهرمونات من تحاليل الدم',
-      'موافقات وجبات المطاعم والسفر في الوقت الفعلي',
-      'وصول مباشر لملاحظات صوتية واتساب للكابتن أحمد',
-      'تعديلات طارئة للجدول وإعادة برمجة أولوية',
-      'خطة تكييف للكارديو ومناطق معدل ضربات القلب مخصصة',
+      'برنامج باورليفتينج متقدم للسكوات والبنش والديدليفت',
+      'تخطيط تفصيلي لرفع الأرقام في التمارين الثلاثة',
+      'تحسين شكل الجسم والصحة وكفاءة الحركة',
+      'تدقيق يومي للتغذية الراجعة وتحسين الأداء',
+      'فحص فيديو شامل أسبوعي وتحليل التقنية',
+      'المتابعة معاي مباشرة',
+      'تصحيح انحرافات القوام بتمارين تصحيحية',
+      'بروتوكولات خاصة بأسبوع الذروة للمسابقات',
     ],
-    ctaText: 'قدم للإرشاد VIP',
+    ctaText: 'اختر AFit Strength',
   },
 ];
 
 export const pricingTiersDataEn: PricingTier[] = [
   {
-    id: 'starter',
-    name: 'Starter Tier',
+    id: 'afit-performance',
+    name: 'AFit Performance',
     price: '$99',
     period: '/month',
-    description: 'Essential structural foundation for disciplined individuals needing clear direction & calculated nutrition.',
+    description: 'A package designed for men, aiming to improve health, physique, movement efficiency, productivity, and strength.',
     features: [
       'Customized workout split (Gym or Home)',
       'Tailored macro & calorie blueprint',
       'Nutritional supplement timing & strategy',
       'Bi-weekly progress & body composition audit',
       'Exercise form & execution video analysis',
-      'Direct WhatsApp coaching support (< 12h response)',
+      'Coaching/monitoring provided directly by me',
+      'Postural deviations correction through corrective exercises',
     ],
-    ctaText: 'Select Starter Tier',
+    ctaText: 'Select AFit Performance',
   },
   {
-    id: 'pro-elite',
-    name: 'Pro Elite Coaching',
-    price: '$199',
+    id: 'afit-her',
+    name: 'AFit Her',
+    price: '$99',
     period: '/month',
     highlighted: true,
     badge: 'Most Popular',
-    description: 'The premier flagship AFIT transformation system. Zero compromise, weekly adaptive changes, & rapid recomposition.',
+    description: 'A lifestyle-oriented package designed for women; similar to the first package, but coaching is provided by a team member.',
     features: [
-      'Complete periodized strength & hypertrophy program',
-      'Weekly dynamic carbohydrate & calorie cycling',
-      'Daily check-ins & sleep optimization feedback',
-      'Comprehensive weekly video audit & strategy session',
-      'Unlimited video form feedback & biomechanics fixes',
-      '24/7 Priority VIP WhatsApp line with rapid response',
-      'Exclusive access to AFIT private exercise video vault',
-      'Dining out & travel nutritional guide',
+      'Customized workout split (Gym or Home)',
+      'Tailored macro & calorie blueprint',
+      'Nutritional supplement timing & strategy',
+      'Bi-weekly progress & body composition audit',
+      'Exercise form & execution video analysis',
+      'Coaching provided by team member',
+      'Postural deviations correction through corrective exercises',
     ],
-    ctaText: 'Apply For Pro Elite',
+    ctaText: 'Select AFit Her',
   },
   {
-    id: 'vip-1on1',
-    name: 'VIP 1-on-1 Mentorship',
-    price: '$349',
+    id: 'afit-strength',
+    name: 'AFit Strength',
+    price: '$199',
     period: '/month',
-    badge: 'Exclusive • Limited Slots',
-    description: 'High-touch executive coaching with direct 1-on-1 personal mentorship, contest prep, or total lifestyle overhaul.',
+    badge: 'Powerlifting Package',
+    description: 'A powerlifting package. The goal is to achieve higher numbers in the squat, bench press, and deadlift—while also addressing other objectives like physique, health, and movement efficiency.',
     features: [
-      'Everything in Pro Elite Coaching included',
-      'Weekly 1-on-1 live strategy video call',
-      'Contest / Stage / Photoshoot peak week protocol',
-      'Biomarker & hormone optimization guidance from bloodwork',
-      'Real-time restaurant meal & travel approvals',
-      'Direct access to Captain Ahmed\'s WhatsApp voice notes',
-      'Emergency schedule adjustments & priority re-programming',
-      'Customized cardio & heart rate zone conditioning plan',
+      'Advanced powerlifting program for squat, bench, and deadlift',
+      'Detailed planning to increase numbers in the three lifts',
+      'Physique, health, and movement efficiency improvement',
+      'Daily nutrition check-ins and performance optimization',
+      'Comprehensive weekly video analysis and technique review',
+      'Coaching/monitoring provided directly by me',
+      'Postural deviations correction through corrective exercises',
+      'Specialized protocols for competition peak week',
     ],
-    ctaText: 'Apply For VIP Mentorship',
+    ctaText: 'Select AFit Strength',
   },
 ];
 
@@ -508,30 +508,30 @@ export const pricingTiersData = pricingTiersDataAr;
 export const galleryDataAr: GalleryItem[] = [
   {
     id: 'gal-1',
-    title: 'بروتوكولات الباربيل الثقيلة المركبة',
-    category: 'القوة والتكييف',
-    image: '/assets/images/gallery-1.jpg',
+    title: '',
+    category: '',
+    image: '/gallery/1.jpeg',
     fallbackImage: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'gal-2',
-    title: 'الرشاقة الرياضية عالية السرعة',
-    category: 'الأداء',
-    image: '/assets/images/gallery-2.jpg',
+    title: '',
+    category: '',
+    image: '/gallery/2.jpeg',
     fallbackImage: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'gal-3',
-    title: 'دقة الشكل الميكانيكي الحيوي',
-    category: 'تقنية التدريب',
-    image: '/assets/images/gallery-3.jpg',
+    title: '',
+    category: '',
+    image: '/gallery/3.jpeg',
     fallbackImage: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'gal-4',
-    title: 'منشأة التدريب الخاصة النخبوية',
-    category: 'بيئة AFIT',
-    image: '/assets/images/gallery-4.jpg',
+    title: '',
+    category: '',
+    image: '/gallery/4.jpeg',
     fallbackImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
   },
 ];
@@ -539,30 +539,30 @@ export const galleryDataAr: GalleryItem[] = [
 export const galleryDataEn: GalleryItem[] = [
   {
     id: 'gal-1',
-    title: 'Heavy Compound Barbell Protocols',
-    category: 'Strength & Conditioning',
-    image: '/assets/images/gallery-1.jpg',
+    title: '',
+    category: '',
+    image: '/gallery/1.jpeg',
     fallbackImage: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'gal-2',
-    title: 'High-Velocity Athletic Agility',
-    category: 'Performance',
-    image: '/assets/images/gallery-2.jpg',
+    title: '',
+    category: '',
+    image: '/gallery/2.jpeg',
     fallbackImage: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'gal-3',
-    title: 'Kinematic Form Precision',
-    category: 'Coaching Technique',
-    image: '/assets/images/gallery-3.jpg',
+    title: '',
+    category: '',
+    image: '/gallery/3.jpeg',
     fallbackImage: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'gal-4',
-    title: 'Elite Private Training Facility',
-    category: 'AFIT Culture',
-    image: '/assets/images/gallery-4.jpg',
+    title: '',
+    category: '',
+    image: '/gallery/4.jpeg',
     fallbackImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
   },
 ];
@@ -600,7 +600,7 @@ export const testimonialsDataAr: Testimonial[] = [
     result: 'دهون جسم رقم واحد ومضاعفة القدرة التحملية',
     avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=200&q=80',
     quote:
-      'طريقة AFIT هي علم بحت. عمليات تسجيل الدخول على واتساب وتصحيحات الشكل الفورية تمسلك مساءلة صارمة. إذا كنت جاداً في تحويل جسمك وعقليتك، لا أحد أفضل في المنطقة.',
+      'طريقة AFIT هي علم بحت. عمليات تسجيل الدخول على واتساب وتصحيحات الشكل الفورية تمسلك مساءلة صارمة. إذا كنت جاداً في تحويل جسمك وعقليتك، لا أحد أفضل في المنطقة. الكابتن أحمد الصياد هو أفضل مدرب عملت معه على الإطلاق.',
   },
 ];
 
@@ -633,7 +633,7 @@ export const testimonialsDataEn: Testimonial[] = [
     result: 'Single Digit Body Fat & Doubled Stamina',
     avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=200&q=80',
     quote:
-      'The AFIT METHOD is pure science. The WhatsApp check-ins and instant form corrections hold you ruthlessly accountable. If you are serious about transforming your body and mindset, there is nobody better in the region.',
+      'The AFIT METHOD is pure science. The WhatsApp check-ins and instant form corrections hold you ruthlessly accountable. If you are serious about transforming your body and mindset, there is nobody better in the region. Captain Ahmed El Saiad is the best coach I have ever worked with.',
   },
 ];
 
@@ -644,54 +644,210 @@ export const testimonialsData = testimonialsDataAr;
 export const faqDataAr: FaqItem[] = [
   {
     id: 'faq-1',
-    question: 'كيف يعمل التدريب عبر الإنترنت مع الكابتن أحمد مصطفى؟',
+    question: '01 — البرنامج مناسب لمين؟',
     answer:
-      'بمجرد التسجيل، يقوم الكابتن أحمد بإجراء تدقيق شامل للتسجيل يقيّم تاريخ تدريبك، ونقاط القوة/الإصابات الميكانيكية، والجدول اليومي، والخط الأساسي الدقيق للسعرات الحرارية. ستتلقى خطة تدريب مخصصة بالكامل ومقسّمة وبروتوكول وجبات أيضي محسوب. كل أسبوع تقدم عمليات تسجيل فيديو وقياسات، وتتلقى تغذية راجعة مباشرة وتعديلات دقيقة مستمرة عبر واتساب.',
+      'برامج AFit مصممة لمختلف المستويات، سواء كنت مبتدئًا أو لديك خبرة في التدريب. بنحدد البرنامج المناسب بناءً على هدفك، مستواك الحالي، وإمكانياتك.',
   },
   {
     id: 'faq-2',
-    question: 'هل يشمل خطط التغذية الأطعمة التي أحبها، أم هو جوع شديد؟',
+    question: '02 — هل البرنامج مخصص ليا؟',
     answer:
-      'حميات الجوع الشديد تؤدي إلى إبطاء الأيض، وانهيار العضلات، والشراهة الارتدادية. طريقة AFIT تستخدم تقسيم مرن للمغذيات الكبرى وتوقيت المغذيات. ستأكل أطعمة كاملة لذيذة وصحية تناسب نمط حياتك، وتفضيلاتك الثقافية، وأهداف الشبع، مما يضمن فقدان دهون مستدام دون الشعور بالمحرومية.',
+      'أيوه. البرامج كلها customized على حياتك وروتينك ووقتك اومكانياتك.',
   },
   {
     id: 'faq-3',
-    question: 'ما المعدات أو عضوية الجيم التي أحتاجها للبدء؟',
+    question: '03 — إيه الأهداف اللي أقدر أشتغل عليها؟',
     answer:
-      'سواء كنت تتدرب في جيم تجاري مجهز بالكامل، أو منشأة رياضية متخصصة، أو إعداد جيم منزلي خاص بالدمبل وأشرطة المقاومة، فإن برنامجك مصمم هندسياً حول المعدات الدقيقة وقيود الوقت المتوفرة لديك.',
+      'تقدر تشتغل على خسارة الدهون، بناء العضلات، تحسين شكل الجسم، زيادة القوة والأداء، تحسين كفاءة الحركة أو تحسين لياقتك بشكل عام.',
   },
   {
     id: 'faq-4',
-    question: 'كم بسرعة يمكنني توقع رؤية نتائج ملموسة مع طريقة AFIT؟',
+    question: '04 — هل لازم أكون بتمرن في الجيم؟',
     answer:
-      'معظم العملاء الملتزمين يلاحظون زيادات ملحوظة في الطاقة، والوضعية، والضخ العضلي خلال أول 10-14 يوماً. التغييرات القابلة للقياس في تكوين الجسم (تخفيض ملحوظ في الخصر، والأوعية الدموية، وكثافة العضلات) تصبح عادة مرئية بشكل لافت من الأسبوع 4 إلى الأسبوع 12 من التنفيذ المتسق.',
+      'مش بالضرورة. نقدر نحدد نظام التدريب بناءً على المكان والمعدات المتاحة لك، سواء Gym أو Home Training.',
+  },
+  {
+    id: 'faq-5',
+    question: '05 — هل النظام الغذائي عبارة عن وجبات ثابتة؟',
+    answer:
+      'نعتمد على نظام مرن مناسب لحالتك وهدفك وتفضيلاتك وبيكون في بدايل كتير ودا بيساعدك على الالتزام اكتر من غير ما تزهق.',
+  },
+  {
+    id: 'faq-6',
+    question: '06 — هل في متابهة يومية؟',
+    answer:
+      'أيوه. المتابعة جزء أساسي من البرنامج، وبنراجع تقدمك وادائك بشكل يومي ونعمل التعديلات المطلوبة على التدريب أو التغذية بناءً على النتائج.',
+  },
+  {
+    id: 'faq-7',
+    question: '07 — إيه اللي بيحصل لو تقدمي وقف؟',
+    answer:
+      'مش بنسيبك تكمل بنفس الخطة وخلاص. بنراجع البيانات والتزامك وتقدمك، ونحدد السبب، وبعدها نعدل الخطة عند الحاجة.',
+  },
+  {
+    id: 'faq-8',
+    question: '08 — لو عندي إصابة أو تمرين معين مش مناسب ليا؟',
+    answer:
+      'لازم تبلغنا قبل بداية البرنامج عن أي إصابات أو قيود في الحركة. وبناءً على المعلومات المتاحة، بنقدر نعدل التمارين بما يتناسب مع حالتك، مع التأكيد إن البرنامج التدريبي لا يُغني عن تقييم الطبيب أو أخصائي العلاج الطبيعي عند الحاجة.',
+  },
+  {
+    id: 'faq-9',
+    question: '09 — هل أقدر أغير مواعيد التمرين أو عدد الأيام؟',
+    answer:
+      'أيوه. البرنامج بيتبني على جدولك وإمكانياتك، والهدف إن الخطة تكون قابلة للتطبيق والاستمرار، مش مجرد خطة مثالية على الورق.',
+  },
+  {
+    id: 'faq-10',
+    question: '10 — هل أقدر أتواصل مع حد لو عندي سؤال؟',
+    answer:
+      'طبعًا. وسيلة التواصل ودرجة الدعم بتختلف حسب الباقة اللي اشتركت فيها، وكل باقة موضح فيها مستوى الدعم والمتابعة المتاح.',
+  },
+  {
+    id: 'faq-11',
+    question: '11 — إزاي أبدأ؟',
+    answer:
+      'اختار الباقة المناسبة لهدفك، أكمل عملية الاشتراك، وبعدها هتبدأ خطوات الـOnboarding وتجميع البيانات المطلوبة لتجهيز برنامجك.',
+  },
+  {
+    id: 'faq-12',
+    question: '13 — هل أقدر أبدأ لو أنا مبتدئ تمامًا؟',
+    answer:
+      'أكيد. مش محتاج تكون عندك خبرة سابقة. البرنامج بيتناسب مع مستواك الحالي، وهدفه إنك تتطور خطوة بخطوة.',
+  },
+  {
+    id: 'faq-13',
+    question: '14 — هل البرامج مختلفة للرجال والبنات؟',
+    answer:
+      'أيوه، عندنا برامج مصممة وفق احتياجات وأهداف مختلفة. اختار البرنامج الأقرب لهدفك، ولو مش متأكد أي برنامج مناسب ليك، تقدر تتواصل معانا قبل الاشتراك.',
+  },
+  {
+    id: 'faq-14',
+    question: '15 — هل عندكم برنامج مخصص للـPowerlifting؟',
+    answer:
+      'أيوه. AFit Strength مخصص للـPowerlifting والرياضيين اللي هدفهم تطوير القوة والأداء، مع برمجة تدريبية أكثر تخصصًا. هدفنا نحقق أرقام أعلى في السكوات والبنش والديدليفت مع تحقيق الأهداف التانية زي شكل الجسم والصحة وكفاءة الحركة.',
+  },
+  {
+    id: 'faq-15',
+    question: '16 — هل النتائج مضمونة؟',
+    answer:
+      'مفيش نتيجة واحدة مضمونة لكل شخص، لأن النتائج بتعتمد على عوامل كثيرة منها الالتزام، التغذية، النوم، التدريب، والحالة الفردية. اللي بنضمنه هو إن مع التزامك والخطة والمتابعة اللي متفصلة على بياناتك وبيتم تعديلهم بناءً على تقدمك هتقدر توصل لنتيجة ترضيك، ولو دا محصلش بتقدر تسترد قيمة اشتراكك كاملة شرط تكون التزمت فعلا ومشوفتش تغيير.',
+  },
+  {
+    id: 'faq-16',
+    question: '17 — هل البرنامج مناسب لو وقتي محدود؟',
+    answer:
+      'أيوه. بنحاول تصميم البرنامج بحيث يتناسب مع وقتك وجدولك الواقعي، لأن أفضل برنامج هو البرنامج اللي تقدر تلتزم بيه باستمرار.',
+  },
+  {
+    id: 'faq-17',
+    question: '18 — إيه الفرق بين الباقات الثلاث؟',
+    answer:
+      'عندنا 3 باقات: AFit Performance للشباب مع متابعة مباشرة مني، AFit Her للبنات مع متابعة من فرد من الفريق، وAFit Strength للباورليفتينج مع متابعة مباشرة مني وتخطيط تفصيلي لرفع الأرقام في السكوات والبنش والديدليفت. جميع الباقات تشمل تصحيح انحرافات القوام.',
   },
 ];
 
 export const faqDataEn: FaqItem[] = [
   {
     id: 'faq-1',
-    question: 'How does online coaching with Captain Ahmed Mostafa work?',
+    question: '01 — Who is this program for?',
     answer:
-      'Once enrolled, Captain Ahmed conducts a comprehensive onboarding audit assessing your training history, mechanical strengths/injuries, daily schedule, and exact baseline calories. You receive a fully personalized periodized workout plan and calculated metabolic meal protocol. Each week you submit video check-ins and measurements, receiving direct feedback and continuous micro-adjustments via WhatsApp.',
+      'AFit programs are designed for all levels, whether you are a beginner or experienced in training. We determine the right program based on your goals, current fitness level, and capabilities.',
   },
   {
     id: 'faq-2',
-    question: 'Do nutrition plans include foods I like, or is it extreme starvation?',
+    question: '02 — Is the program personalized for me?',
     answer:
-      'Extreme starvation diets destroy metabolism, break down muscle, and cause rebound bingeing. The AFIT METHOD uses flexible macro-tallying and nutrient timing. You will eat delicious, nutrient-dense whole foods tailored to your lifestyle, cultural preferences, and satiety targets, ensuring sustainable fat loss without feeling deprived.',
+      'Yes. All programs are customized to fit your lifestyle, routine, schedule, and capabilities.',
   },
   {
     id: 'faq-3',
-    question: 'What equipment or gym membership do I need to start?',
+    question: '03 — What goals can I work towards?',
     answer:
-      'Whether you train in a fully equipped commercial gym, a specialized athletic facility, or a home gym set up with dumbbells and resistance bands, your program is engineered around the exact equipment and time constraints you have available.',
+      'You can work on fat loss, muscle building, body recomposition, increasing strength and performance, improving movement efficiency, or enhancing your overall fitness.',
   },
   {
     id: 'faq-4',
-    question: 'How fast can I expect to see tangible results with the AFIT METHOD?',
+    question: '04 — Do I have to train at a gym?',
     answer:
-      'Most committed clients notice significant increases in energy, posture, and muscle pumps within the first 10-14 days. Measurable body composition changes (noticeable waist reduction, vascularity, and muscle density) typically become strikingly visible from Week 4 to Week 12 of consistent execution.',
+      'Not necessarily. We can design your training plan based on your location and available equipment, whether you prefer gym workouts or home training.',
+  },
+  {
+    id: 'faq-5',
+    question: '05 — Does the nutrition plan consist of fixed meals?',
+    answer:
+      'We use a flexible approach tailored to your situation, goals, and preferences. We provide plenty of alternatives, which helps you stay committed without getting bored.',
+  },
+  {
+    id: 'faq-6',
+    question: '06 — Is there daily follow-up?',
+    answer:
+      'Yes. Follow-up is a core part of the program; we review your progress and performance daily and make necessary adjustments to your training or nutrition based on the results.',
+  },
+  {
+    id: 'faq-7',
+    question: '07 — What happens if my progress stalls?',
+    answer:
+      'We don\'t just let you continue with the same plan regardless. We review the data, your adherence, and your progress to identify the cause, then adjust the plan as needed.',
+  },
+  {
+    id: 'faq-8',
+    question: '08 — What if I have an injury or a specific exercise isn\'t suitable for me?',
+    answer:
+      'You must inform us of any injuries or movement limitations before starting the program. Based on this information, we can modify exercises to suit your condition—though please note that the training program does not replace a professional assessment by a doctor or physical therapist when needed.',
+  },
+  {
+    id: 'faq-9',
+    question: '09 — Can I change my workout schedule or the number of training days?',
+    answer:
+      'Yes. The program is built around your schedule and capabilities; the goal is to create a plan that is practical and sustainable, not just an ideal plan on paper.',
+  },
+  {
+    id: 'faq-10',
+    question: '10 — Can I contact someone if I have a question?',
+    answer:
+      'Of course. Communication methods and the level of support vary depending on the package you choose; each package clearly outlines the available support and follow-up.',
+  },
+  {
+    id: 'faq-11',
+    question: '11 — How do I get started?',
+    answer:
+      'Choose the package that suits your goal and complete the sign-up process. Afterward, you will begin the onboarding steps and provide the necessary data to prepare your program.',
+  },
+  {
+    id: 'faq-12',
+    question: '13 — Can I start if I\'m a complete beginner?',
+    answer:
+      'Absolutely. You don\'t need any prior experience. The program is tailored to your current level, aiming to help you progress step-by-step.',
+  },
+  {
+    id: 'faq-13',
+    question: '14 — Are the programs different for men and women?',
+    answer:
+      'Yes, we have programs designed to meet different needs and goals. Choose the program that best aligns with your objective. If you aren\'t sure which one is right for you, feel free to contact us before signing up.',
+  },
+  {
+    id: 'faq-14',
+    question: '15 — Do you have a program specifically for powerlifting?',
+    answer:
+      'Yes. "AFit Strength" is dedicated to powerlifting and athletes aiming to improve strength and performance. Our goal is to achieve higher numbers in the squat, bench press, and deadlift while also addressing other objectives like physique, health, and movement efficiency.',
+  },
+  {
+    id: 'faq-15',
+    question: '16 — Are results guaranteed?',
+    answer:
+      'There is no single guaranteed result for everyone, as outcomes depend on many factors—including commitment, nutrition, sleep, training, and individual circumstances. What we do guarantee is that by sticking to the plan and the follow-up—which are tailored to your data and adjusted based on your progress—you will achieve satisfying results. If that doesn\'t happen, you can get a full refund, provided you genuinely adhered to the program and saw no changes.',
+  },
+  {
+    id: 'faq-16',
+    question: '17 — Is the program suitable if I have limited time?',
+    answer:
+      'Yes. We aim to design a program that fits your time and realistic schedule, because the best program is the one you can stick to consistently.',
+  },
+  {
+    id: 'faq-17',
+    question: '18 — What is the difference between the three packages?',
+    answer:
+      'We offer 3 packages: AFit Performance for men with direct coaching from me, AFit Her for women with coaching from a team member, and AFit Strength for powerlifting with direct coaching from me and detailed planning to increase numbers in squat, bench, and deadlift. All packages include postural deviations correction.',
   },
 ];
 

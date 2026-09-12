@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useCoachData } from '../data/coachData';
-import { BeforeAfterSlider } from './BeforeAfterSlider';
 import { Flame, Timer, ArrowUpRight, CheckCircle2, Sparkles, SlidersHorizontal } from 'lucide-react';
 import { useTranslations } from '../hooks/useTranslations';
 
@@ -8,13 +7,16 @@ export const Transformations: React.FC = () => {
   const t = useTranslations();
   const { transformations } = useCoachData();
 
+  // Memoize transformations to prevent unnecessary re-renders
+  const transformationItems = useMemo(() => transformations, [transformations]);
+
   return (
     <section id="transformations" className="py-24 bg-[#0A0A0A] relative overflow-hidden border-t border-[#2B2B2B] w-full max-w-full">
       {/* Background Ambient Glow */}
       <div className="absolute right-0 sm:right-1/4 top-1/2 -translate-y-1/2 w-72 sm:w-80 h-72 sm:h-80 bg-[#E30613]/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#1A1A1A] border border-[#2B2B2B] text-xs font-bold uppercase tracking-widest text-[#E30613]">
@@ -27,24 +29,22 @@ export const Transformations: React.FC = () => {
           </p>
         </div>
 
-        {/* 3-Column Grid of Before/After Sliders */}
+        {/* 3-Column Grid of Transformation Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {transformations.map((item) => {
+          {transformationItems.map((item) => {
             return (
               <div
                 key={item.id}
                 className="rounded-lg bg-[#121212] border border-[#2B2B2B] overflow-hidden flex flex-col justify-between group shadow-xl hover:border-[#E30613]/50 transition-colors"
               >
-                {/* Top Interactive Slider Container */}
+                {/* Top Image Container */}
                 <div className="relative aspect-[4/4.5] w-full overflow-hidden bg-[#181818]">
-                  <BeforeAfterSlider
-                    beforeImage={item.beforeImage}
-                    afterImage={item.afterImage}
-                    beforeFallback={item.fallbackBeforeImage}
-                    afterFallback={item.fallbackAfterImage}
-                    beforeAlt={`${item.clientName} Before Transformation`}
-                    afterAlt={`${item.clientName} After Transformation`}
-                    className="h-full"
+                  <img
+                    src={item.afterImage}
+                    alt={`${item.clientName} Transformation`}
+                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
                   />
 
                   {/* Floating Timeframe Badge */}

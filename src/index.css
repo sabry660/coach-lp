@@ -1,10 +1,12 @@
 @import "tailwindcss";
 
+/* Arabic Font with optimized loading */
 @font-face {
   font-family: 'Madika Arabic';
   src: url('/alfont_com_MadikaArabicTRIAL-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @layer base {
@@ -142,5 +144,24 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #E30613;
+}
+
+/* Performance optimizations */
+img {
+  content-visibility: auto;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 

@@ -16,10 +16,10 @@ export const translations = {
     },
     // Hero
     hero: {
-      badge: 'CAPTAIN AHMED MOSTAFA • AFIT METHOD FOUNDER',
+      badge: 'CAPTAIN AHMED EL SAIAD • AFIT METHOD FOUNDER',
       headline: 'ELITE TRAINING & NUTRITION',
       subheadline: 'The Science of Athletic Dominance • AFIT METHOD',
-      description: 'Stop wasting years on generic fitness plans. Master Trainer Captain Ahmed Mostafa delivers bespoke periodized training, surgical sports nutrition, and ruthless accountability engineered to build an unbreakable, high-performance physique.',
+      description: 'Stop wasting years on generic fitness plans. Master Trainer Captain Ahmed El Saiad delivers bespoke periodized training, surgical sports nutrition, and ruthless accountability engineered to build an unbreakable, high-performance physique.',
       startTransformation: 'Start Your Transformation',
       exploreTiers: 'Explore Coaching Tiers',
       coachingMastery: 'Coaching Mastery',
@@ -46,7 +46,7 @@ export const translations = {
       accreditations: 'Accreditations',
       tailored: 'Tailored',
       scienceBacked: 'SCIENCE-BACKED. RESULTS-DRIVEN. NO EXCUSES.',
-      narrative: 'With over a decade on the gym floor and advanced international credentials from the <strong>United Kingdom (TASS), USA (ACE), and London International University</strong>, Captain Ahmed Mostafa has revolutionized physique engineering in Egypt and the Middle East.',
+      narrative: 'With over a decade on the gym floor and advanced international credentials from the <strong>United Kingdom (TASS), USA (ACE), and London International University</strong>, Captain Ahmed El Saiad has revolutionized physique engineering in Egypt and the Middle East.',
       narrative2: 'The <strong>AFIT METHOD</strong> was born out of frustration with toxic fitness trends: starvation crash diets, injury-prone training splits, and generic online PDFs. Captain Ahmed\'s protocol treats each client like an elite athlete—analyzing metabolic markers, hormonal health, biomechanics, and daily lifestyle constraints to craft an undisputed roadmap to victory.',
     },
     // Certifications
@@ -64,22 +64,22 @@ export const translations = {
     transformations: {
       badge: 'Proven Track Record',
       headline: 'REAL CLIENT <span class="text-[#E30613]">TRANSFORMATIONS</span>',
-      description: 'Drag the interactive slider to see undeniable before and after results. Real science, disciplined adherence, and surgical nutrition.',
+      description: 'View real client transformations with documented results. Real science, disciplined adherence, and surgical nutrition.',
       afitClient: 'AFIT 1-on-1 Client',
       completed: 'Completed',
       weightDelta: 'Weight Delta',
       bodyFatDelta: 'Body Fat Delta',
       achieveResult: 'Achieve Similar Result',
-      disclaimer: '* Individual results vary based on starting baseline, biological adherence, and consistency. All transformations shown are verified 1-on-1 clients of Captain Ahmed Mostafa.',
+      disclaimer: '* Individual results vary based on starting baseline, biological adherence, and consistency. All transformations shown are verified 1-on-1 clients of Captain Ahmed El Saiad.',
     },
     // Pricing
     pricing: {
       badge: 'Investment in Excellence',
-      headline: 'SUBSCRIPTION <span class="text-[#E30613]">TIERS & PRICING</span>',
-      description: 'Transparent, zero-nonsense coaching tiers tailored to your ambition level. Limited intake slots per month to preserve elite coaching quality.',
+      headline: 'TRAINING <span class="text-[#E30613]">PACKAGES</span>',
+      description: 'Choose the package that suits your goals. All packages include postural deviations correction through corrective exercises.',
       whatIncluded: 'What is included:',
       cancelAnytime: 'Cancel or adjust anytime • No lock-in contracts',
-      customGroup: 'Looking for Competition Prep or Corporate Group Coaching?',
+      customGroup: 'Looking for specialized training or competition preparation?',
       requestCustom: 'Request Custom Consultation →',
     },
     // Gallery
@@ -91,27 +91,27 @@ export const translations = {
     // Testimonials
     testimonials: {
       badge: 'Client Success & Words',
-      headline: 'WHAT CLIENTS <span class="text-[#E30613]">SAY ABOUT CAPTAIN AHMED</span>',
+      headline: 'WHAT CLIENTS <span class="text-[#E30613]">SAY ABOUT CAPTAIN AHMED EL SAIAD</span>',
       description: 'From medical surgeons to busy corporate executives, discover how the AFIT METHOD changes lives permanently.',
     },
     // FAQ
     faq: {
       badge: 'Clear Answers',
       headline: 'FREQUENTLY ASKED <span class="text-[#E30613]">QUESTIONS</span>',
-      description: 'Everything you need to know about the AFIT METHOD onboarding, nutrition flexibility, and coaching workflow.',
-      customQuestion: 'Have a custom medical question or specific athletic inquiry?',
-      askDirectly: 'Ask Captain Ahmed directly on WhatsApp →',
+      description: 'Everything you need to know about AFit packages, customization, and training approach.',
+      customQuestion: 'Still have questions?',
+      askDirectly: 'Contact the AFit team before signing up, and we\'ll help you choose the package best suited to your goals.',
     },
     // Contact
     contact: {
       badge: 'Apply For Coaching',
       headline: 'START YOUR TRANSFORMATION TODAY',
-      description: 'Fill out your details below to instantly generate your tailored consultation message and send it directly to Captain Ahmed on WhatsApp.',
+      description: 'Fill out your details below to instantly generate your tailored consultation message and send it directly to Captain Ahmed El Saiad on WhatsApp.',
       directAccess: 'DIRECT COACH ACCESS',
-      directAccessDesc: 'Skip the middleman. You will work directly with Captain Ahmed Mostafa. Every workout, diet split, and weekly video audit is personally engineered by him.',
+      directAccessDesc: 'Skip the middleman. You will work directly with Captain Ahmed El Saiad. Every workout, diet split, and weekly video audit is personally engineered by him.',
       instantWhatsApp: 'Instant WhatsApp Chat',
       confidential: 'Confidential & Direct Athletic / Nutrition Consultation',
-      followCaptain: 'FOLLOW CAPTAIN AHMED MOSTAFA',
+      followCaptain: 'FOLLOW CAPTAIN AHMED EL SAIAD',
       followDesc: 'Daily exercise execution tips, scientific nutrition breakdowns, and client stories.',
       instagram: 'Instagram',
       facebook: 'Facebook',
@@ -129,7 +129,7 @@ export const translations = {
       desiredProgram: 'Desired Coaching Program',
       injuriesNotes: 'Injuries, Medical Conditions, or Specific Preferences',
       sendMessage: 'Send Consultation Message on WhatsApp',
-      privacyPolicy: 'By clicking submit, your structured inquiry is sent securely and directly to Captain Ahmed Mostafa. Zero spam, 100% confidentiality guaranteed.',
+      privacyPolicy: 'By clicking submit, your structured inquiry is sent securely and directly to Captain Ahmed El Saiad. Zero spam, 100% confidentiality guaranteed.',
       // Goal options
       goalFatLoss: 'Fat Loss & Physique Shredding',
       goalMuscle: 'Lean Muscle Hypertrophy & Bulk',
@@ -144,9 +144,9 @@ export const translations = {
     },
     // Footer
     footer: {
-      description: 'Elite athletic conditioning, body recomposition, and sports nutrition methodology led by Captain Ahmed Mostafa.',
+      description: 'Elite athletic conditioning, body recomposition, and sports nutrition methodology led by Captain Ahmed El Saiad.',
       quickNav: 'QUICK NAVIGATION',
-      aboutCaptain: 'About Captain Ahmed',
+      aboutCaptain: 'About Captain Ahmed El Saiad',
       verifiedAccreditations: 'Verified Accreditations',
       clientTransformations: 'Client Transformations',
       coachingTiers: 'Coaching Tiers & Rates',
@@ -154,12 +154,12 @@ export const translations = {
       frequentlyAsked: 'Frequently Asked Questions',
       accreditations: 'ACCREDITATIONS',
       onlineConsultation: 'ONLINE CONSULTATION',
-      consultationDesc: 'Start your customized AFIT program directly on WhatsApp with Captain Ahmed Mostafa.',
+      consultationDesc: 'Start your customized AFIT program directly on WhatsApp with Captain Ahmed El Saiad.',
       getInTouch: 'Get In Touch',
       evidenceBased: 'Evidence-Based Fitness & Sports Nutrition',
       top: 'Top',
       disclaimer: 'Disclaimer: Fitness and dietary protocols should be executed with proper technique and medical clearance. Results vary individually.',
-      copyright: 'Captain Ahmed Mostafa • AFIT METHOD. All rights reserved.',
+      copyright: 'Captain Ahmed El Saiad • AFIT METHOD. All rights reserved.',
     },
     // Music Modal
     music: {
@@ -176,7 +176,7 @@ export const translations = {
       officiallyVerified: 'Officially Verified Credential',
       issuingBody: 'Issuing Body',
       curriculumCompetencies: 'Curriculum & Tested Competencies',
-      verifiedRegistry: 'Verified under Captain Ahmed Mostafa\'s coaching registry.',
+      verifiedRegistry: 'Verified under Captain Ahmed El Saiad\'s coaching registry.',
       applyToTrain: 'Apply To Train With Coach',
     },
     // Lightbox Modal
@@ -201,10 +201,10 @@ export const translations = {
     },
     // Hero
     hero: {
-      badge: 'الكابتن أحمد مصطفى • مؤسس طريقة AFIT',
+      badge: 'الكابتن أحمد الصياد • مؤسس طريقة AFIT',
       headline: 'التدريب والتغذية النخبوية',
       subheadline: 'علم الهيمنة الرياضية • طريقة AFIT',
-      description: 'توقف عن إضاعة السنوات على خطط اللياقة العامة. المدرب الرئيسي الكابتن أحمد مصطفى يقدم تدريباً مقسماً مخصصاً، وتغذية رياضية جراحية، ومساءلة صارمة مصممة لبناء جسم لا يُقهر وعالي الأداء.',
+      description: 'توقف عن إضاعة السنوات على خطط اللياقة العامة. المدرب الرئيسي الكابتن أحمد الصياد يقدم تدريباً مقسماً مخصصاً، وتغذية رياضية جراحية، ومساءلة صارمة مصممة لبناء جسم لا يُقهر وعالي الأداء.',
       startTransformation: 'ابدأ تحولك',
       exploreTiers: 'استكشف خطط التدريب',
       coachingMastery: 'سنوات الخبرة',
@@ -232,7 +232,7 @@ export const translations = {
       accreditations: 'اعتمادات',
       tailored: 'مخصص',
       scienceBacked: 'قائم على العلم. مدفوع بالنتائج. لا أعذار.',
-      narrative: 'مع أكثر من عقد من الزمان في صالة الألعاب الرياضية واعتمادات دولية متقدمة من <strong>المملكة المتحدة (TASS)، الولايات المتحدة (ACE)، وجامعة لندن الدولية</strong>، أحدث الكابتن أحمد مصطفى ثورة في هندسة الأجسام في مصر والشرق الأوسط.',
+      narrative: 'مع أكثر من عقد من الزمان في صالة الألعاب الرياضية واعتمادات دولية متقدمة من <strong>المملكة المتحدة (TASS)، الولايات المتحدة (ACE)، وجامعة لندن الدولية</strong>، أحدث الكابتن أحمد الصياد ثورة في هندسة الأجسام في مصر والشرق الأوسط.',
       narrative2: 'ولدت <strong>طريقة AFIT</strong> من إحباط مع اتجاهات اللياقة السامة: أنظمة الغذاء الكارثية للتجويع، تقسيمات التدريب المعرضة للإصابة، وملفات PDF العامة عبر الإنترنت. بروتوكول الكابتن أحمد يعامل كل عميل كرياضي نخبوي—حلل مؤشرات التمثيل الغذائي، الصحة الهرمونية، الميكانيكا الحيوية، وقيود نمط الحياة اليومية لصناعة خارطة طريق لا جدال فيها للنصر.',
     },
     // Certifications
@@ -250,22 +250,22 @@ export const translations = {
     transformations: {
       badge: 'سجل مثبت',
       headline: 'تحويلات <span class="text-[#E30613]">عملاء حقيقية</span>',
-      description: 'اسحب شريط التفاعل لرؤية نتائج قبل وبعد لا يمكن إنكارها. علم حقيقي، التزام منضبط، وتغذية جراحية.',
+      description: 'شاهد تحويلات العملاء الحقيقية مع نتائج موثقة. علم حقيقي، التزام منضبط، وتغذية جراحية.',
       afitClient: 'عميل AFIT 1-على-1',
       completed: 'مكتمل',
       weightDelta: 'تغير الوزن',
       bodyFatDelta: 'تغير دهون الجسم',
       achieveResult: 'حقق نتيجة مشابهة',
-      disclaimer: '* تختلف النتائج الفردية بناءً على الخط الأساسي، الالتزام البيولوجي، والاتساق. جميع التحويلات المعروضة هي عملاء موثقين 1-على-1 للكابتن أحمد مصطفى.',
+      disclaimer: '* تختلف النتائج الفردية بناءً على الخط الأساسي، الالتزام البيولوجي، والاتساق. جميع التحويلات المعروضة هي عملاء موثقين 1-على-1 للكابتن أحمد الصياد.',
     },
     // Pricing
     pricing: {
       badge: 'الاستثمار في التميز',
-      headline: 'خطط الاشتراك <span class="text-[#E30613]">والأسعار</span>',
-      description: 'خطط تدريب شفافة وواضحة مصممة لمستوى طموحك. مقاعد محدودة شهرياً للحفاظ على جودة التدريب النخبوية.',
+      headline: 'باقات <span class="text-[#E30613]">التدريب</span>',
+      description: 'اختر الباقة المناسبة لأهدافك. جميع الباقات تشمل تصحيح انحرافات القوام بتمارين تصحيحية.',
       whatIncluded: 'ما هو مشمول:',
       cancelAnytime: 'إلغاء أو تعديل في أي وقت • لا عقود إلزامية',
-      customGroup: 'تبحث عن تحضير المسابقات أو التدريب الجماعي للمؤسسات؟',
+      customGroup: 'تبحث عن تدريب متخصص أو تحضير للمسابقات؟',
       requestCustom: 'اطلب استشارة مخصصة →',
     },
     // Gallery
@@ -277,27 +277,27 @@ export const translations = {
     // Testimonials
     testimonials: {
       badge: 'نجاح العملاء وكلماتهم',
-      headline: 'ماذا يقول العملاء <span class="text-[#E30613]">عن الكابتن أحمد</span>',
+      headline: 'ماذا يقول العملاء <span class="text-[#E30613]">عن الكابتن أحمد الصياد</span>',
       description: 'من الجراحين الطبيين إلى المديرين التنفيذيين المشغولين، اكتشف كيف تغير طريقة AFIT الحياة بشكل دائم.',
     },
     // FAQ
     faq: {
       badge: 'إجابات واضحة',
       headline: 'الأسئلة <span class="text-[#E30613]">المتداولة</span>',
-      description: 'كل ما تحتاج معرفته عن تسجيل AFIT، مرونة التغذية، وسير عمل التدريب.',
-      customQuestion: 'لديك سؤال طبي مخصص أو استفسار رياضي محدد؟',
-      askDirectly: 'اسأل الكابتن أحمد مباشرة على واتساب →',
+      description: 'كل ما تحتاج معرفته عن باقات AFit، التخصيص، ونهج التدريب.',
+      customQuestion: 'لو لسه عندك سؤال مش موجود هنا',
+      askDirectly: 'تواصل مع فريق AFit قبل الاشتراك وهنساعدك تختار الباقة الأنسب لهدفك.',
     },
     // Contact
     contact: {
       badge: 'قدم للتدريب',
       headline: 'ابدأ تحولك اليوم',
-      description: 'املأ تفاصيلك أدناه لإنشاء رسالة استشاريتك المخصصة فوراً وإرسالها مباشرة إلى الكابتن أحمد على واتساب.',
+      description: 'املأ تفاصيلك أدناه لإنشاء رسالة استشاريتك المخصصة فوراً وإرسالها مباشرة إلى الكابتن أحمد الصياد على واتساب.',
       directAccess: 'الوصول المباشر للمدرب',
-      directAccessDesc: 'تخطى الوسطاء. ستعمل مباشرة مع الكابتن أحمد مصطفى. كل تمرين، تقسيم غذائي، وتدقيق فيديو أسبوعي يتم هندسته شخصياً من قبله.',
+      directAccessDesc: 'تخطى الوسطاء. ستعمل مباشرة مع الكابتن أحمد الصياد. كل تمرين، تقسيم غذائي، وتدقيق فيديو أسبوعي يتم هندسته شخصياً من قبله.',
       instantWhatsApp: 'محادثة واتساب فورية',
       confidential: 'استشارة رياضية/تغذية سرية ومباشرة',
-      followCaptain: 'تابع الكابتن أحمد مصطفى',
+      followCaptain: 'تابع الكابتن أحمد الصياد',
       followDesc: 'نصائح يومية لتنفيذ التمارين، تحليلات علمية للتغذية، وقصص العملاء.',
       instagram: 'إنستغرام',
       facebook: 'فيسبوك',
@@ -315,7 +315,7 @@ export const translations = {
       desiredProgram: 'برنامج التدريب المطلوب',
       injuriesNotes: 'الإصابات، الحالات الطبية، أو التفضيلات المحددة',
       sendMessage: 'إرسال رسالة استشارية على واتساب',
-      privacyPolicy: 'بالنقر على إرسال، يتم إرسال استفسارك المنظم بأمان ومباشرة إلى الكابتن أحمد مصطفى. لا رسائل مزعجة، سرية 100% مضمونة.',
+      privacyPolicy: 'بالنقر على إرسال، يتم إرسال استفسارك المنظم بأمان ومباشرة إلى الكابتن أحمد الصياد. لا رسائل مزعجة، سرية 100% مضمونة.',
       // Goal options
       goalFatLoss: 'فقدان الدهون وتقطيع الجسم',
       goalMuscle: 'تضخم العضلات وبناء الكتلة',
@@ -330,9 +330,9 @@ export const translations = {
     },
     // Footer
     footer: {
-      description: 'تكييف رياضي نخبوي، إعادة تكوين الجسم، ومنهجية التغذية الرياضية بقيادة الكابتن أحمد مصطفى.',
+      description: 'تكييف رياضي نخبوي، إعادة تكوين الجسم، ومنهجية التغذية الرياضية بقيادة الكابتن أحمد الصياد.',
       quickNav: 'التنقل السريع',
-      aboutCaptain: 'عن الكابتن أحمد',
+      aboutCaptain: 'عن الكابتن أحمد الصياد',
       verifiedAccreditations: 'الاعتمادات الموثقة',
       clientTransformations: 'تحويلات العملاء',
       coachingTiers: 'خطط التدريب والأسعار',
@@ -340,12 +340,12 @@ export const translations = {
       frequentlyAsked: 'الأسئلة المتداولة',
       accreditations: 'الاعتمادات',
       onlineConsultation: 'الاستشارة عبر الإنترنت',
-      consultationDesc: 'ابدأ برنامج AFIT المخصص مباشرة على واتساب مع الكابتن أحمد مصطفى.',
+      consultationDesc: 'ابدأ برنامج AFIT المخصص مباشرة على واتساب مع الكابتن أحمد الصياد.',
       getInTouch: 'تواصل معنا',
       evidenceBased: 'اللياقة والتغذية الرياضية القائمة على الأدلة',
       top: 'أعلى',
       disclaimer: 'إخلاء المسؤولية: يجب تنفيذ بروتوكولات اللياقة والنظام الغذائي بتقنية سليمة وموافقة طبية. تختلف النتائج فردياً.',
-      copyright: 'الكابتن أحمد مصطفى • طريقة AFIT. جميع الحقوق محفوظة.',
+      copyright: 'الكابتن أحمد الصياد • طريقة AFIT. جميع الحقوق محفوظة.',
     },
     // Music Modal
     music: {
@@ -362,7 +362,7 @@ export const translations = {
       officiallyVerified: 'اعتماد رسمي موثق',
       issuingBody: 'الهيئة المانحة',
       curriculumCompetencies: 'المنهج والمهارات المختبرة',
-      verifiedRegistry: 'موثق تحت سجل تدريب الكابتن أحمد مصطفى.',
+      verifiedRegistry: 'موثق تحت سجل تدريب الكابتن أحمد الصياد.',
       applyToTrain: 'قدم للتدريب مع المدرب',
     },
     // Lightbox Modal

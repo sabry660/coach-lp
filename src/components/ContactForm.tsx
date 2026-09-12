@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { AppSettings, ConsultationFormData } from '../types';
 import {
   MessageCircle,
@@ -43,7 +43,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
     email: '',
     goal: t.contact.goalFatLoss,
     experienceLevel: t.contact.expIntermediate,
-    selectedTier: selectedTierId ? (selectedTierId === 'vip-1on1' ? 'VIP 1-on-1 ($349/mo)' : selectedTierId === 'pro-elite' ? 'Pro Elite Coaching ($199/mo)' : 'Starter Tier ($99/mo)') : 'Pro Elite Coaching ($199/mo)',
+    selectedTier: selectedTierId ? (selectedTierId === 'afit-strength' ? 'AFit Strength ($199/mo)' : selectedTierId === 'afit-her' ? 'AFit Her ($99/mo)' : 'AFit Performance ($99/mo)') : 'AFit Performance ($99/mo)',
     currentWeight: '',
     targetWeight: '',
     height: '',
@@ -51,17 +51,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({
     notes: '',
   });
 
-  const [submitted, setSubmitted] = useState(false);
-  const [generatedMessage, setGeneratedMessage] = useState('');
-
   // Update selected tier if user clicks from pricing section
   useEffect(() => {
-    if (selectedTierId === 'starter') {
-      setFormData((prev) => ({ ...prev, selectedTier: 'Starter Tier ($99/mo)' }));
-    } else if (selectedTierId === 'pro-elite') {
-      setFormData((prev) => ({ ...prev, selectedTier: 'Pro Elite Coaching ($199/mo)' }));
-    } else if (selectedTierId === 'vip-1on1') {
-      setFormData((prev) => ({ ...prev, selectedTier: 'VIP 1-on-1 ($349/mo)' }));
+    if (selectedTierId === 'afit-performance') {
+      setFormData((prev) => ({ ...prev, selectedTier: 'AFit Performance ($99/mo)' }));
+    } else if (selectedTierId === 'afit-her') {
+      setFormData((prev) => ({ ...prev, selectedTier: 'AFit Her ($99/mo)' }));
+    } else if (selectedTierId === 'afit-strength') {
+      setFormData((prev) => ({ ...prev, selectedTier: 'AFit Strength ($199/mo)' }));
     }
   }, [selectedTierId]);
 
@@ -70,8 +67,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const constructWhatsAppMessage = (): string => {
-    const coachName = settings.coachName || 'Captain Ahmed Mostafa';
+  const [submitted, setSubmitted] = useState(false);
+  const [generatedMessage, setGeneratedMessage] = useState('');
+
+  // Memoize WhatsApp message construction
+  const constructWhatsAppMessage = useCallback((): string => {
+    const coachName = settings.coachName || 'Captain Ahmed El Saiad';
     
     return `🔥 *AFIT METHOD — Coaching Application & Consultation* 🔥
 ------------------------------------------
@@ -90,7 +91,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 ${formData.notes ? formData.notes : 'Ready to start full training protocol immediately.'}
 ------------------------------------------
 🚀 *Submitted via AFIT Official Landing Page for ${coachName}*`;
-  };
+  }, [formData, settings.coachName]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -110,7 +111,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
   const handleDirectWhatsAppClick = () => {
     const cleanNumber = (settings.whatsappNumber || '201000000000').replace(/[^0-9]/g, '');
     const defaultMsg = encodeURIComponent(
-      `Hello Captain Ahmed Mostafa! I am interested in joining the AFIT METHOD coaching program. Please send me the details.`
+      `Hello Captain Ahmed El Saiad! I am interested in joining the AFIT METHOD coaching program. Please send me the details.`
     );
     window.open(`https://wa.me/${cleanNumber}?text=${defaultMsg}`, '_blank', 'noopener,noreferrer');
   };
@@ -153,7 +154,7 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                     {t.contact.directAccess}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-300 font-body leading-relaxed mt-1">
-                    {t.contact.directAccessDesc.replace('Captain Ahmed Mostafa', `<strong>${settings.coachName}</strong>`)}
+                    {t.contact.directAccessDesc.replace('Captain Ahmed Mostafa', `<strong>${settings.coachName}</strong>`).replace('Captain Ahmed El Saiad', `<strong>${settings.coachName}</strong>`)}
                   </p>
                 </div>
 
@@ -397,9 +398,9 @@ ${formData.notes ? formData.notes : 'Ready to start full training protocol immed
                     onChange={handleChange}
                     className="w-full bg-[#181818] border border-[#2B2B2B] focus:border-[#E30613] focus:ring-1 focus:ring-[#E30613] rounded px-4 py-3 text-sm text-white outline-none cursor-pointer"
                   >
-                    <option value="Starter Tier ($99/mo)">Starter Tier ($99/mo) — Structured Plan & Audits</option>
-                    <option value="Pro Elite Coaching ($199/mo)">Pro Elite Coaching ($199/mo) — Flagship AFIT System (Most Popular)</option>
-                    <option value="VIP 1-on-1 ($349/mo)">VIP 1-on-1 Mentorship ($349/mo) — Direct Video Calls & Peak Prep</option>
+                    <option value="AFit Performance ($99/mo)">AFit Performance ($99/mo) — Men's Health & Strength</option>
+                    <option value="AFit Her ($99/mo)">AFit Her ($99/mo) — Women's Lifestyle with Team Coaching (Most Popular)</option>
+                    <option value="AFit Strength ($199/mo)">AFit Strength ($199/mo) — Powerlifting & Advanced Training</option>
                   </select>
                 </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { GalleryItem } from '../types';
-import { X, ArrowRight } from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface LightboxModalProps {
   item: GalleryItem | null;
@@ -36,27 +36,6 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({ item, onClose }) =
             className="max-h-[70vh] w-auto object-contain"
             referrerPolicy="no-referrer"
           />
-        </div>
-
-        {/* Caption */}
-        <div className="p-6 bg-[#141414] border-t border-[#2B2B2B] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#E30613]">
-              {item.category}
-            </span>
-            <h3 className="font-heading text-2xl text-white tracking-wide">
-              {item.title}
-            </h3>
-          </div>
-
-          <a
-            href="#contact"
-            onClick={onClose}
-            className="px-5 py-2.5 rounded bg-[#E30613] hover:bg-[#C00510] text-white text-xs font-bold uppercase tracking-wider text-center flex items-center justify-center gap-1.5"
-          >
-            <span>Train In This Environment</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </a>
         </div>
 
       </div>

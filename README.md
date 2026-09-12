@@ -1,6 +1,6 @@
-# Captain Ahmed Mostafa - AFIT METHOD Website
+# Captain Ahmed El Saiad - AFIT METHOD Website
 
-Official elite fitness and nutrition coaching landing page for Captain Ahmed Mostafa. This React-based website showcases personalized training programs, sports nutrition services, and proven client transformations.
+Official elite fitness and nutrition coaching landing page for Captain Ahmed El Saiad. This React-based website showcases personalized training programs, sports nutrition services, and proven client transformations.
 
 ## Features
 
@@ -194,16 +194,16 @@ The site is optimized for performance with:
 ## Support
 
 For support or inquiries about the coaching programs:
-- Email: coach.ahmedmostafa@afitmethod.com
+- Email: coach.ahmedelsaiad@afitmethod.com
 - WhatsApp: +20 100 000 0000
-- Instagram: @ahmedmostafa_afit
+- Instagram: @ahmedelsaiad_afit
 
 ## License
 
-This project is proprietary software. All rights reserved to Captain Ahmed Mostafa - AFIT METHOD.
+This project is proprietary software. All rights reserved to Captain Ahmed El Saiad - AFIT METHOD.
 
 ## Credits
 
 - Design and Development: AFIT METHOD Team
-- Coach: Captain Ahmed Mostafa
+- Coach: Captain Ahmed El Saiad
 - Technologies: React, TypeScript, Tailwind CSS, Vite
