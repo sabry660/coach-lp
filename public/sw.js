@@ -1,11 +1,12 @@
-const CACHE_NAME = 'afit-method-v1';
+const CACHE_NAME = 'afit-method-v2';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/icon.svg',
-  '/icon-192.svg',
-  '/icon-512.svg'
+  '/logo.jpg',
+  '/icon.jpg',
+  '/icon-192.jpg',
+  '/icon-512.jpg'
 ];
 
 self.addEventListener('install', (event) => {

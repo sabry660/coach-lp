@@ -83,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             aria-label="AFIT Home"
           >
             <img 
-              src="/logo.svg" 
+              src="/logo.jpg" 
               alt="AFIT METHOD Logo" 
               className="h-10 sm:h-11 w-auto transition-all duration-300 group-hover:scale-105"
             />

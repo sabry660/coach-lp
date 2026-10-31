@@ -118,7 +118,7 @@ Update coach information in `src/data/coachData.ts`:
 
 ### Branding
 
-- Logo: Replace `/public/logo.svg` with your brand logo
+- Logo: Replace `/public/logo.jpg` with your brand logo
 - Colors: Modify Tailwind CSS color values in components (primary: `#E30613`)
 - Fonts: Update Google Fonts in `index.html`
 

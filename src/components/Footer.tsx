@@ -35,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
           <div className="space-y-4">
             <a href="#hero" className="inline-block group" aria-label="AFIT Home">
               <img 
-                src="/logo.svg" 
+                src="/logo.jpg" 
                 alt="AFIT METHOD Logo" 
                 className="h-11 w-auto transition-transform duration-300 group-hover:scale-105"
               />
